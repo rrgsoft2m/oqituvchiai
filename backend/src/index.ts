@@ -21,6 +21,8 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
+app.get("/", (req, res) => res.send("Oqituvchi AI API is running..."));
+
 // Routes
 app.post("/api/auth/register", register);
 app.post("/api/auth/login", login);

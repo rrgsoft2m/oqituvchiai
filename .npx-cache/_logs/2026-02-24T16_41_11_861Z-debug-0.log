@@ -1,0 +1,922 @@
+0 verbose cli /Users/rrg/.nvm/versions/node/v24.13.0/bin/node /Users/rrg/.nvm/versions/node/v24.13.0/bin/npm
+1 info using npm@11.6.2
+2 info using node@v24.13.0
+3 silly config load:file:/Users/rrg/.nvm/versions/node/v24.13.0/lib/node_modules/npm/npmrc
+4 silly config load:file:/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/.npmrc
+5 silly config load:file:/Users/rrg/.npmrc
+6 silly config load:file:/Users/rrg/.nvm/versions/node/v24.13.0/etc/npmrc
+7 verbose title npm install prisma@6.4.1 @prisma/client@6.4.1
+8 verbose argv "--cache" "../.npx-cache" "install" "prisma@6.4.1" "@prisma/client@6.4.1"
+9 verbose logfile logs-max:10 dir:/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/.npx-cache/_logs/2026-02-24T16_41_11_861Z-
+10 verbose logfile /Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/.npx-cache/_logs/2026-02-24T16_41_11_861Z-debug-0.log
+11 silly logfile start cleaning logs, removing 1 files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly logfile done cleaning log files
+14 verbose shrinkwrap failed to load node_modules/.package-lock.json out of date, updated: node_modules
+15 silly idealTree buildDeps
+16 silly fetch manifest @prisma/client@6.4.1
+17 silly packumentCache full:https://registry.npmjs.org/@prisma%2fclient cache-miss
+18 http fetch GET 200 https://registry.npmjs.org/@prisma%2fclient 1654ms (cache updated)
+19 silly packumentCache full:https://registry.npmjs.org/@prisma%2fclient set size:undefined disposed:false
+20 silly fetch manifest prisma@6.4.1
+21 silly packumentCache full:https://registry.npmjs.org/prisma cache-miss
+22 http fetch GET 200 https://registry.npmjs.org/prisma 787ms (cache updated)
+23 silly packumentCache full:https://registry.npmjs.org/prisma set size:undefined disposed:false
+24 silly fetch manifest typescript@^5.9.3
+25 silly packumentCache full:https://registry.npmjs.org/typescript cache-miss
+26 http fetch GET 200 https://registry.npmjs.org/typescript 129ms (cache revalidated)
+27 silly packumentCache full:https://registry.npmjs.org/typescript set size:15283919 disposed:false
+28 silly placeDep ROOT @prisma/client@6.4.1 REPLACE for: backend@1.0.0 want: 6.4.1
+29 silly placeDep ROOT prisma@6.4.1 REPLACE for: backend@1.0.0 want: 6.4.1
+30 silly fetch manifest esbuild@>=0.12 <1
+31 silly packumentCache full:https://registry.npmjs.org/esbuild cache-miss
+32 silly fetch manifest @prisma/engines@6.4.1
+33 silly packumentCache full:https://registry.npmjs.org/@prisma%2fengines cache-miss
+34 silly fetch manifest esbuild-register@3.6.0
+35 silly packumentCache full:https://registry.npmjs.org/esbuild-register cache-miss
+36 http fetch GET 200 https://registry.npmjs.org/esbuild 154ms (cache miss)
+37 silly packumentCache full:https://registry.npmjs.org/esbuild set size:undefined disposed:false
+38 http fetch GET 200 https://registry.npmjs.org/esbuild-register 388ms (cache miss)
+39 silly packumentCache full:https://registry.npmjs.org/esbuild-register set size:undefined disposed:false
+40 http fetch GET 200 https://registry.npmjs.org/@prisma%2fengines 420ms (cache revalidated)
+41 silly packumentCache full:https://registry.npmjs.org/@prisma%2fengines set size:21473489 disposed:false
+42 silly placeDep ROOT @prisma/engines@6.4.1 OK for: prisma@6.4.1 want: 6.4.1
+43 silly placeDep ROOT esbuild@0.27.3 OK for: prisma@6.4.1 want: >=0.12 <1
+44 silly placeDep ROOT esbuild-register@3.6.0 OK for: prisma@6.4.1 want: 3.6.0
+45 silly fetch manifest @prisma/debug@6.4.1
+46 silly packumentCache full:https://registry.npmjs.org/@prisma%2fdebug cache-miss
+47 silly fetch manifest @prisma/fetch-engine@6.4.1
+48 silly packumentCache full:https://registry.npmjs.org/@prisma%2ffetch-engine cache-miss
+49 silly fetch manifest @prisma/get-platform@6.4.1
+50 silly packumentCache full:https://registry.npmjs.org/@prisma%2fget-platform cache-miss
+51 silly fetch manifest @prisma/engines-version@6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d
+52 silly packumentCache full:https://registry.npmjs.org/@prisma%2fengines-version cache-miss
+53 silly fetch manifest @esbuild/aix-ppc64@0.27.3
+54 silly packumentCache full:https://registry.npmjs.org/@esbuild%2faix-ppc64 cache-miss
+55 silly fetch manifest @esbuild/android-arm@0.27.3
+56 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fandroid-arm cache-miss
+57 silly fetch manifest @esbuild/android-arm64@0.27.3
+58 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fandroid-arm64 cache-miss
+59 http fetch GET 200 https://registry.npmjs.org/@esbuild%2faix-ppc64 118ms (cache miss)
+60 silly packumentCache full:https://registry.npmjs.org/@esbuild%2faix-ppc64 set size:undefined disposed:false
+61 silly fetch manifest @esbuild/android-x64@0.27.3
+62 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fandroid-x64 cache-miss
+63 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-arm64 138ms (cache miss)
+64 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fandroid-arm64 set size:undefined disposed:false
+65 silly fetch manifest @esbuild/darwin-arm64@0.27.3
+66 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fdarwin-arm64 cache-miss
+67 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-arm 144ms (cache miss)
+68 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fandroid-arm set size:undefined disposed:false
+69 silly fetch manifest @esbuild/darwin-x64@0.27.3
+70 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fdarwin-x64 cache-miss
+71 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fandroid-x64 128ms (cache miss)
+72 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fandroid-x64 set size:undefined disposed:false
+73 silly fetch manifest @esbuild/freebsd-arm64@0.27.3
+74 silly packumentCache full:https://registry.npmjs.org/@esbuild%2ffreebsd-arm64 cache-miss
+75 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fdarwin-arm64 140ms (cache miss)
+76 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fdarwin-arm64 set size:undefined disposed:false
+77 silly fetch manifest @esbuild/freebsd-x64@0.27.3
+78 silly packumentCache full:https://registry.npmjs.org/@esbuild%2ffreebsd-x64 cache-miss
+79 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fdarwin-x64 140ms (cache miss)
+80 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fdarwin-x64 set size:undefined disposed:false
+81 silly fetch manifest @esbuild/linux-arm@0.27.3
+82 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-arm cache-miss
+83 http fetch GET 200 https://registry.npmjs.org/@esbuild%2ffreebsd-arm64 131ms (cache miss)
+84 silly packumentCache full:https://registry.npmjs.org/@esbuild%2ffreebsd-arm64 set size:undefined disposed:false
+85 silly fetch manifest @esbuild/linux-arm64@0.27.3
+86 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-arm64 cache-miss
+87 http fetch GET 200 https://registry.npmjs.org/@prisma%2fget-platform 452ms (cache revalidated)
+88 silly packumentCache full:https://registry.npmjs.org/@prisma%2fget-platform set size:28106441 disposed:false
+89 silly fetch manifest @esbuild/linux-ia32@0.27.3
+90 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-ia32 cache-miss
+91 http fetch GET 200 https://registry.npmjs.org/@prisma%2ffetch-engine 564ms (cache revalidated)
+92 silly packumentCache full:https://registry.npmjs.org/@prisma%2ffetch-engine set size:31970157 disposed:false
+93 silly fetch manifest @esbuild/linux-loong64@0.27.3
+94 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-loong64 cache-miss
+95 http fetch GET 200 https://registry.npmjs.org/@prisma%2fdebug 662ms (cache revalidated)
+96 silly packumentCache full:https://registry.npmjs.org/@prisma%2fdebug set size:28437821 disposed:false
+97 silly fetch manifest @esbuild/linux-mips64el@0.27.3
+98 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-mips64el cache-miss
+99 http fetch GET 200 https://registry.npmjs.org/@esbuild%2ffreebsd-x64 480ms (cache miss)
+100 silly packumentCache full:https://registry.npmjs.org/@esbuild%2ffreebsd-x64 set size:undefined disposed:false
+101 silly fetch manifest @esbuild/linux-ppc64@0.27.3
+102 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-ppc64 cache-miss
+103 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-arm 475ms (cache miss)
+104 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-arm set size:undefined disposed:false
+105 silly fetch manifest @esbuild/linux-riscv64@0.27.3
+106 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-riscv64 cache-miss
+107 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-arm64 384ms (cache miss)
+108 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-arm64 set size:undefined disposed:false
+109 silly fetch manifest @esbuild/linux-s390x@0.27.3
+110 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-s390x cache-miss
+111 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-ia32 374ms (cache miss)
+112 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-ia32 set size:undefined disposed:false
+113 silly fetch manifest @esbuild/linux-x64@0.27.3
+114 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-x64 cache-miss
+115 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-s390x 156ms (cache miss)
+116 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-s390x set size:undefined disposed:false
+117 silly fetch manifest @esbuild/netbsd-arm64@0.27.3
+118 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fnetbsd-arm64 cache-miss
+119 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-riscv64 171ms (cache miss)
+120 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-riscv64 set size:undefined disposed:false
+121 silly fetch manifest @esbuild/netbsd-x64@0.27.3
+122 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fnetbsd-x64 cache-miss
+123 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-loong64 297ms (cache miss)
+124 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-loong64 set size:undefined disposed:false
+125 silly fetch manifest @esbuild/openbsd-arm64@0.27.3
+126 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fopenbsd-arm64 cache-miss
+127 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-ppc64 192ms (cache miss)
+128 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-ppc64 set size:undefined disposed:false
+129 silly fetch manifest @esbuild/openbsd-x64@0.27.3
+130 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fopenbsd-x64 cache-miss
+131 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-mips64el 206ms (cache miss)
+132 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-mips64el set size:undefined disposed:false
+133 silly fetch manifest @esbuild/openharmony-arm64@0.27.3
+134 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fopenharmony-arm64 cache-miss
+135 http fetch GET 200 https://registry.npmjs.org/@prisma%2fengines-version 1066ms (cache updated)
+136 silly packumentCache full:https://registry.npmjs.org/@prisma%2fengines-version set size:undefined disposed:false
+137 silly fetch manifest @esbuild/sunos-x64@0.27.3
+138 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fsunos-x64 cache-miss
+139 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenbsd-arm64 161ms (cache miss)
+140 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fopenbsd-arm64 set size:undefined disposed:false
+141 silly fetch manifest @esbuild/win32-arm64@0.27.3
+142 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fwin32-arm64 cache-miss
+143 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenharmony-arm64 136ms (cache miss)
+144 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fopenharmony-arm64 set size:undefined disposed:false
+145 silly fetch manifest @esbuild/win32-ia32@0.27.3
+146 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fwin32-ia32 cache-miss
+147 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fnetbsd-arm64 178ms (cache miss)
+148 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fnetbsd-arm64 set size:undefined disposed:false
+149 silly fetch manifest @esbuild/win32-x64@0.27.3
+150 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fwin32-x64 cache-miss
+151 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fnetbsd-x64 167ms (cache miss)
+152 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fnetbsd-x64 set size:undefined disposed:false
+153 http fetch GET 200 https://registry.npmjs.org/@esbuild%2flinux-x64 190ms (cache miss)
+154 silly packumentCache full:https://registry.npmjs.org/@esbuild%2flinux-x64 set size:undefined disposed:false
+155 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fopenbsd-x64 175ms (cache miss)
+156 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fopenbsd-x64 set size:undefined disposed:false
+157 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-arm64 123ms (cache miss)
+158 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fwin32-arm64 set size:undefined disposed:false
+159 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fsunos-x64 147ms (cache miss)
+160 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fsunos-x64 set size:undefined disposed:false
+161 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-ia32 146ms (cache miss)
+162 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fwin32-ia32 set size:undefined disposed:false
+163 http fetch GET 200 https://registry.npmjs.org/@esbuild%2fwin32-x64 148ms (cache miss)
+164 silly packumentCache full:https://registry.npmjs.org/@esbuild%2fwin32-x64 set size:undefined disposed:false
+165 silly placeDep ROOT @prisma/debug@6.4.1 OK for: @prisma/engines@6.4.1 want: 6.4.1
+166 silly placeDep ROOT @prisma/engines-version@6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d OK for: @prisma/engines@6.4.1 want: 6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d
+167 silly placeDep ROOT @prisma/fetch-engine@6.4.1 OK for: @prisma/engines@6.4.1 want: 6.4.1
+168 silly placeDep ROOT @prisma/get-platform@6.4.1 OK for: @prisma/engines@6.4.1 want: 6.4.1
+169 silly placeDep ROOT @esbuild/aix-ppc64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+170 silly placeDep ROOT @esbuild/android-arm@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+171 silly placeDep ROOT @esbuild/android-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+172 silly placeDep ROOT @esbuild/android-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+173 silly placeDep ROOT @esbuild/darwin-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+174 silly placeDep ROOT @esbuild/darwin-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+175 silly placeDep ROOT @esbuild/freebsd-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+176 silly placeDep ROOT @esbuild/freebsd-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+177 silly placeDep ROOT @esbuild/linux-arm@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+178 silly placeDep ROOT @esbuild/linux-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+179 silly placeDep ROOT @esbuild/linux-ia32@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+180 silly placeDep ROOT @esbuild/linux-loong64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+181 silly placeDep ROOT @esbuild/linux-mips64el@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+182 silly placeDep ROOT @esbuild/linux-ppc64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+183 silly placeDep ROOT @esbuild/linux-riscv64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+184 silly placeDep ROOT @esbuild/linux-s390x@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+185 silly placeDep ROOT @esbuild/linux-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+186 silly placeDep ROOT @esbuild/netbsd-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+187 silly placeDep ROOT @esbuild/netbsd-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+188 silly placeDep ROOT @esbuild/openbsd-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+189 silly placeDep ROOT @esbuild/openbsd-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+190 silly placeDep ROOT @esbuild/openharmony-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+191 silly placeDep ROOT @esbuild/sunos-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+192 silly placeDep ROOT @esbuild/win32-arm64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+193 silly placeDep ROOT @esbuild/win32-ia32@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+194 silly placeDep ROOT @esbuild/win32-x64@0.27.3 OK for: esbuild@0.27.3 want: 0.27.3
+195 silly reify mark retired [
+195 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/aws-ssl-profiles'
+195 silly reify ]
+196 silly reify mark retired [
+196 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/c12'
+196 silly reify ]
+197 silly reify mark retired [
+197 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/confbox'
+197 silly reify ]
+198 silly reify mark retired [
+198 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/chevrotain'
+198 silly reify ]
+199 silly reify mark retired [
+199 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/consola'
+199 silly reify ]
+200 silly reify mark retired [
+200 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/citty'
+200 silly reify ]
+201 silly reify mark retired [
+201 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/csstype'
+201 silly reify ]
+202 silly reify mark retired [
+202 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/deepmerge-ts'
+202 silly reify ]
+203 silly reify mark retired [
+203 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/defu'
+203 silly reify ]
+204 silly reify mark retired [
+204 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/denque'
+204 silly reify ]
+205 silly reify mark retired [
+205 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/effect'
+205 silly reify ]
+206 silly reify mark retired [
+206 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/chokidar'
+206 silly reify ]
+207 silly reify mark retired [
+207 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/destr'
+207 silly reify ]
+208 silly reify mark retired [
+208 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/empathic'
+208 silly reify ]
+209 silly reify mark retired [
+209 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/fast-check'
+209 silly reify ]
+210 silly reify mark retired [
+210 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/exsolve'
+210 silly reify ]
+211 silly reify mark retired [
+211 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/generate-function'
+211 silly reify ]
+212 silly reify mark retired [
+212 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/get-port-please'
+212 silly reify ]
+213 silly reify mark retired [
+213 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/graceful-fs'
+213 silly reify ]
+214 silly reify mark retired [
+214 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/graphmatch'
+214 silly reify ]
+215 silly reify mark retired [
+215 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/grammex'
+215 silly reify ]
+216 silly reify mark retired [
+216 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/http-status-codes'
+216 silly reify ]
+217 silly reify mark retired [
+217 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/hono'
+217 silly reify ]
+218 silly reify mark retired [
+218 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/giget',
+218 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/giget'
+218 silly reify ]
+219 silly reify mark retired [
+219 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/is-property'
+219 silly reify ]
+220 silly reify mark retired [
+220 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/jiti',
+220 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/jiti'
+220 silly reify ]
+221 silly reify mark retired [
+221 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/lilconfig'
+221 silly reify ]
+222 silly reify mark retired [
+222 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/lodash'
+222 silly reify ]
+223 silly reify mark retired [
+223 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/lru.min'
+223 silly reify ]
+224 silly reify mark retired [
+224 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/mysql2'
+224 silly reify ]
+225 silly reify mark retired [
+225 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/named-placeholders'
+225 silly reify ]
+226 silly reify mark retired [
+226 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/node-fetch-native'
+226 silly reify ]
+227 silly reify mark retired [
+227 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/nypm',
+227 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/nypm'
+227 silly reify ]
+228 silly reify mark retired [
+228 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/ohash'
+228 silly reify ]
+229 silly reify mark retired [
+229 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/pathe'
+229 silly reify ]
+230 silly reify mark retired [
+230 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/perfect-debounce'
+230 silly reify ]
+231 silly reify mark retired [
+231 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/pkg-types'
+231 silly reify ]
+232 silly reify mark retired [
+232 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/postgres'
+232 silly reify ]
+233 silly reify mark retired [
+233 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/pure-rand'
+233 silly reify ]
+234 silly reify mark retired [
+234 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/proper-lockfile'
+234 silly reify ]
+235 silly reify mark retired [
+235 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/prisma',
+235 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/prisma'
+235 silly reify ]
+236 silly reify mark retired [
+236 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/react'
+236 silly reify ]
+237 silly reify mark retired [
+237 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/remeda'
+237 silly reify ]
+238 silly reify mark retired [
+238 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/regexp-to-ast'
+238 silly reify ]
+239 silly reify mark retired [
+239 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/readdirp'
+239 silly reify ]
+240 silly reify mark retired [
+240 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/rc9'
+240 silly reify ]
+241 silly reify mark retired [
+241 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/scheduler'
+241 silly reify ]
+242 silly reify mark retired [
+242 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/react-dom'
+242 silly reify ]
+243 silly reify mark retired [
+243 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/seq-queue'
+243 silly reify ]
+244 silly reify mark retired [
+244 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/sqlstring'
+244 silly reify ]
+245 silly reify mark retired [
+245 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/std-env'
+245 silly reify ]
+246 silly reify mark retired [
+246 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/valibot'
+246 silly reify ]
+247 silly reify mark retired [
+247 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/tinyexec'
+247 silly reify ]
+248 silly reify mark retired [
+248 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/cst-dts-gen'
+248 silly reify ]
+249 silly reify mark retired [
+249 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/types'
+249 silly reify ]
+250 silly reify mark retired [
+250 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/utils'
+250 silly reify ]
+251 silly reify mark retired [
+251 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/gast'
+251 silly reify ]
+252 silly reify mark retired [
+252 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/zeptomatch'
+252 silly reify ]
+253 silly reify mark retired [
+253 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/pglite-socket',
+253 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/pglite-server'
+253 silly reify ]
+254 silly reify mark retired [
+254 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/pglite-tools'
+254 silly reify ]
+255 silly reify mark retired [
+255 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/pglite'
+255 silly reify ]
+256 silly reify mark retired [
+256 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@hono/node-server'
+256 silly reify ]
+257 silly reify mark retired [
+257 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@mrleebo/prisma-ast'
+257 silly reify ]
+258 silly reify mark retired [
+258 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/debug'
+258 silly reify ]
+259 silly reify mark retired [
+259 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/config'
+259 silly reify ]
+260 silly reify mark retired [
+260 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/client-runtime-utils'
+260 silly reify ]
+261 silly reify mark retired [
+261 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/dev'
+261 silly reify ]
+262 silly reify mark retired [
+262 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/engines'
+262 silly reify ]
+263 silly reify mark retired [
+263 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/fetch-engine'
+263 silly reify ]
+264 silly reify mark retired [
+264 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/client'
+264 silly reify ]
+265 silly reify mark retired [
+265 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/engines-version'
+265 silly reify ]
+266 silly reify mark retired [
+266 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/query-plan-executor'
+266 silly reify ]
+267 silly reify mark retired [
+267 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/studio-core'
+267 silly reify ]
+268 silly reify mark retired [
+268 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/get-platform'
+268 silly reify ]
+269 silly reify mark retired [
+269 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@standard-schema/spec'
+269 silly reify ]
+270 silly reify mark retired [
+270 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@types/react'
+270 silly reify ]
+271 silly reify moves {
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/aws-ssl-profiles': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.aws-ssl-profiles-qDi2f6ac',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/c12': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.c12-81lpa3ST',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/confbox': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.confbox-57scb0lx',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/chevrotain': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.chevrotain-TODmbJQP',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/consola': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.consola-h8eboj5W',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/citty': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.citty-usSk9wah',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/csstype': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.csstype-3qSvZR1V',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/deepmerge-ts': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.deepmerge-ts-t6ERXfZr',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/defu': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.defu-SMdB1MYE',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/denque': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.denque-6iQXr84P',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/effect': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.effect-FSI7nAMG',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/chokidar': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.chokidar-F8JpsrZp',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/destr': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.destr-KobwtbGw',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/empathic': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.empathic-UqEYUb5S',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/fast-check': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.fast-check-tUKcAgGZ',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/exsolve': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.exsolve-Qe6XohYa',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/generate-function': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.generate-function-y7SYn3On',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/get-port-please': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.get-port-please-69ufPHwj',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/graceful-fs': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.graceful-fs-ad8OrTQM',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/graphmatch': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.graphmatch-6kGUzwgG',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/grammex': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.grammex-yc5kISs0',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/http-status-codes': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.http-status-codes-9j1DhbeW',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/hono': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.hono-flFZA2FS',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/giget': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.giget-JHsnymL2',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/giget': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/.giget-tSgi75Oi',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/is-property': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.is-property-I3731lhM',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/jiti': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.jiti-ekaRI2SJ',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/jiti': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/.jiti-KWvWfbMK',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/lilconfig': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.lilconfig-EJeuLrhp',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/lodash': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.lodash-reRoqWge',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/lru.min': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.lru.min-xSZU9rj0',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/mysql2': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.mysql2-uZlOvmyn',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/named-placeholders': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.named-placeholders-4IlJwEPr',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/node-fetch-native': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.node-fetch-native-UoswOxXA',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/nypm': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.nypm-1WJogscV',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/nypm': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/.nypm-TQ9d6ZCn',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/ohash': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.ohash-bl4J09L5',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/pathe': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.pathe-HScEKS91',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/perfect-debounce': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.perfect-debounce-zxihzXQs',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/pkg-types': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.pkg-types-rAMLJl76',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/postgres': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.postgres-lGl1kIs0',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/pure-rand': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.pure-rand-PIJGkRHA',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/proper-lockfile': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.proper-lockfile-b4EztaZe',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/prisma': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.prisma-BdagVqxF',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/prisma': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/.prisma-sL98EZrF',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/react': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.react-myIzgLXH',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/remeda': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.remeda-9vWuOcVT',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/regexp-to-ast': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.regexp-to-ast-JA8X4fV5',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/readdirp': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.readdirp-TIVqeqNZ',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/rc9': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.rc9-uzCrSigi',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/scheduler': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.scheduler-85nd9ICf',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/react-dom': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.react-dom-Wvh4D1Xl',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/seq-queue': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.seq-queue-gO9DSyX5',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/sqlstring': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.sqlstring-GqF3gIb7',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/std-env': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.std-env-pHEpUk6c',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/valibot': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.valibot-DyTGrqw3',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/tinyexec': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.tinyexec-YubPubgq',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/cst-dts-gen': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/.cst-dts-gen-XYginPzt',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/types': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/.types-EQEdIxca',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/utils': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/.utils-6XUOVnS4',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/gast': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@chevrotain/.gast-1PBdGgeJ',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/zeptomatch': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.zeptomatch-rYBj78ol',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/pglite-socket': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/.pglite-socket-pmsdK6Wi',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/pglite-server': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/.bin/.pglite-server-UkuohM1G',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/pglite-tools': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/.pglite-tools-ZHxabep8',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/pglite': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@electric-sql/.pglite-wbs6HeNp',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@hono/node-server': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@hono/.node-server-4miF5ZF3',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@mrleebo/prisma-ast': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@mrleebo/.prisma-ast-a636ld1V',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/debug': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.debug-ltuI44Gq',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/config': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.config-SHNpSPgh',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/client-runtime-utils': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.client-runtime-utils-AQsw8EM8',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/dev': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.dev-on8Ozrz3',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/engines': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.engines-ktZGtETk',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/fetch-engine': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.fetch-engine-nrX3qj86',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/client': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.client-dEchDPx2',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/engines-version': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.engines-version-ZduK39jQ',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/query-plan-executor': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.query-plan-executor-ueGfqWPA',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/studio-core': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.studio-core-P4Fw1rmn',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/get-platform': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@prisma/.get-platform-kfjn2OHy',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@standard-schema/spec': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@standard-schema/.spec-b5rDfbqS',
+271 silly reify   '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@types/react': '/Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend/node_modules/@types/.react-mn2hbmr5'
+271 silly reify }
+272 silly audit bulk request {
+272 silly audit   '@cspotcode/source-map-support': [ '0.8.1' ],
+272 silly audit   '@google/genai': [ '1.42.0' ],
+272 silly audit   '@isaacs/cliui': [ '8.0.2' ],
+272 silly audit   '@jridgewell/resolve-uri': [ '3.1.2' ],
+272 silly audit   '@jridgewell/sourcemap-codec': [ '1.5.5' ],
+272 silly audit   '@jridgewell/trace-mapping': [ '0.3.9' ],
+272 silly audit   '@pkgjs/parseargs': [ '0.11.0' ],
+272 silly audit   '@protobufjs/aspromise': [ '1.1.2' ],
+272 silly audit   '@protobufjs/base64': [ '1.1.2' ],
+272 silly audit   '@protobufjs/codegen': [ '2.0.4' ],
+272 silly audit   '@protobufjs/eventemitter': [ '1.1.0' ],
+272 silly audit   '@protobufjs/fetch': [ '1.1.0' ],
+272 silly audit   '@protobufjs/float': [ '1.0.2' ],
+272 silly audit   '@protobufjs/inquire': [ '1.1.0' ],
+272 silly audit   '@protobufjs/path': [ '1.1.2' ],
+272 silly audit   '@protobufjs/pool': [ '1.1.0' ],
+272 silly audit   '@protobufjs/utf8': [ '1.1.0' ],
+272 silly audit   '@tsconfig/node10': [ '1.0.12' ],
+272 silly audit   '@tsconfig/node12': [ '1.0.11' ],
+272 silly audit   '@tsconfig/node14': [ '1.0.3' ],
+272 silly audit   '@tsconfig/node16': [ '1.0.4' ],
+272 silly audit   '@types/bcryptjs': [ '2.4.6' ],
+272 silly audit   '@types/body-parser': [ '1.19.6' ],
+272 silly audit   '@types/connect': [ '3.4.38' ],
+272 silly audit   '@types/cors': [ '2.8.19' ],
+272 silly audit   '@types/express': [ '5.0.6' ],
+272 silly audit   '@types/express-serve-static-core': [ '5.1.1' ],
+272 silly audit   '@types/http-errors': [ '2.0.5' ],
+272 silly audit   '@types/jsonwebtoken': [ '9.0.10' ],
+272 silly audit   '@types/ms': [ '2.1.0' ],
+272 silly audit   '@types/node': [ '25.3.0' ],
+272 silly audit   '@types/qs': [ '6.14.0' ],
+272 silly audit   '@types/range-parser': [ '1.2.7' ],
+272 silly audit   '@types/retry': [ '0.12.0' ],
+272 silly audit   '@types/send': [ '1.2.1' ],
+272 silly audit   '@types/serve-static': [ '2.2.0' ],
+272 silly audit   accepts: [ '2.0.0' ],
+272 silly audit   acorn: [ '8.16.0' ],
+272 silly audit   'acorn-walk': [ '8.3.5' ],
+272 silly audit   'agent-base': [ '7.1.4' ],
+272 silly audit   'ansi-regex': [ '6.2.2', '5.0.1' ],
+272 silly audit   'ansi-styles': [ '6.2.3', '4.3.0' ],
+272 silly audit   anymatch: [ '3.1.3' ],
+272 silly audit   arg: [ '4.1.3' ],
+272 silly audit   'balanced-match': [ '4.0.4' ],
+272 silly audit   'base64-js': [ '1.5.1' ],
+272 silly audit   bcryptjs: [ '3.0.3' ],
+272 silly audit   'bignumber.js': [ '9.3.1' ],
+272 silly audit   'binary-extensions': [ '2.3.0' ],
+272 silly audit   'body-parser': [ '2.2.2' ],
+272 silly audit   'brace-expansion': [ '5.0.3' ],
+272 silly audit   braces: [ '3.0.3' ],
+272 silly audit   'buffer-equal-constant-time': [ '1.0.1' ],
+272 silly audit   bytes: [ '3.1.2' ],
+272 silly audit   dotenv: [ '17.3.1' ],
+272 silly audit   'call-bind-apply-helpers': [ '1.0.2' ],
+272 silly audit   'call-bound': [ '1.0.4' ],
+272 silly audit   chokidar: [ '3.6.0' ],
+272 silly audit   'color-convert': [ '2.0.1' ],
+272 silly audit   'color-name': [ '1.1.4' ],
+272 silly audit   'content-disposition': [ '1.0.1' ],
+272 silly audit   'content-type': [ '1.0.5' ],
+272 silly audit   cookie: [ '0.7.2' ],
+272 silly audit   'cookie-signature': [ '1.2.2' ],
+272 silly audit   cors: [ '2.8.6' ],
+272 silly audit   'create-require': [ '1.1.1' ],
+272 silly audit   'cross-spawn': [ '7.0.6' ],
+272 silly audit   'data-uri-to-buffer': [ '4.0.1' ],
+272 silly audit   debug: [ '4.4.3' ],
+272 silly audit   depd: [ '2.0.0' ],
+272 silly audit   diff: [ '4.0.4' ],
+272 silly audit   'dunder-proto': [ '1.0.1' ],
+272 silly audit   eastasianwidth: [ '0.2.0' ],
+272 silly audit   'ecdsa-sig-formatter': [ '1.0.11' ],
+272 silly audit   'ee-first': [ '1.1.1' ],
+272 silly audit   'emoji-regex': [ '9.2.2', '8.0.0' ],
+272 silly audit   encodeurl: [ '2.0.0' ],
+272 silly audit   'es-define-property': [ '1.0.1' ],
+272 silly audit   'es-errors': [ '1.3.0' ],
+272 silly audit   'es-object-atoms': [ '1.1.1' ],
+272 silly audit   'escape-html': [ '1.0.3' ],
+272 silly audit   etag: [ '1.8.1' ],
+272 silly audit   express: [ '5.2.1' ],
+272 silly audit   'express-rate-limit': [ '8.2.1' ],
+272 silly audit   extend: [ '3.0.2' ],
+272 silly audit   'fetch-blob': [ '3.2.0' ],
+272 silly audit   'fill-range': [ '7.1.1' ],
+272 silly audit   finalhandler: [ '2.1.1' ],
+272 silly audit   'foreground-child': [ '3.3.1' ],
+272 silly audit   'formdata-polyfill': [ '4.0.10' ],
+272 silly audit   forwarded: [ '0.2.0' ],
+272 silly audit   fresh: [ '2.0.0' ],
+272 silly audit   fsevents: [ '2.3.3' ],
+272 silly audit   'function-bind': [ '1.1.2' ],
+272 silly audit   gaxios: [ '7.1.3' ],
+272 silly audit   'gcp-metadata': [ '8.1.2' ],
+272 silly audit   'get-intrinsic': [ '1.3.0' ],
+272 silly audit   'get-proto': [ '1.0.1' ],
+272 silly audit   glob: [ '10.5.0' ],
+272 silly audit   'glob-parent': [ '5.1.2' ],
+272 silly audit   'google-auth-library': [ '10.5.0' ],
+272 silly audit   'google-logging-utils': [ '1.1.3' ],
+272 silly audit   gopd: [ '1.2.0' ],
+272 silly audit   gtoken: [ '8.0.0' ],
+272 silly audit   'has-flag': [ '3.0.0' ],
+272 silly audit   'has-symbols': [ '1.1.0' ],
+272 silly audit   hasown: [ '2.0.2' ],
+272 silly audit   helmet: [ '8.1.0' ],
+272 silly audit   'http-errors': [ '2.0.1' ],
+272 silly audit   'https-proxy-agent': [ '7.0.6' ],
+272 silly audit   'iconv-lite': [ '0.7.2' ],
+272 silly audit   'ignore-by-default': [ '1.0.1' ],
+272 silly audit   inherits: [ '2.0.4' ],
+272 silly audit   'ip-address': [ '10.0.1' ],
+272 silly audit   'ipaddr.js': [ '1.9.1' ],
+272 silly audit   'is-binary-path': [ '2.1.0' ],
+272 silly audit   'is-extglob': [ '2.1.1' ],
+272 silly audit   'is-fullwidth-code-point': [ '3.0.0' ],
+272 silly audit   'is-glob': [ '4.0.3' ],
+272 silly audit   'is-number': [ '7.0.0' ],
+272 silly audit   'is-promise': [ '4.0.0' ],
+272 silly audit   isexe: [ '2.0.0' ],
+272 silly audit   jackspeak: [ '3.4.3' ],
+272 silly audit   'json-bigint': [ '1.0.0' ],
+272 silly audit   jsonwebtoken: [ '9.0.3' ],
+272 silly audit   jwa: [ '2.0.1' ],
+272 silly audit   jws: [ '4.0.1' ],
+272 silly audit   'lodash.includes': [ '4.3.0' ],
+272 silly audit   'lodash.isboolean': [ '3.0.3' ],
+272 silly audit   'lodash.isinteger': [ '4.0.4' ],
+272 silly audit   'lodash.isnumber': [ '3.0.3' ],
+272 silly audit   'lodash.isplainobject': [ '4.0.6' ],
+272 silly audit   'lodash.isstring': [ '4.0.1' ],
+272 silly audit   'lodash.once': [ '4.1.1' ],
+272 silly audit   long: [ '5.3.2' ],
+272 silly audit   'lru-cache': [ '10.4.3' ],
+272 silly audit   'make-error': [ '1.3.6' ],
+272 silly audit   'math-intrinsics': [ '1.1.0' ],
+272 silly audit   'media-typer': [ '1.1.0' ],
+272 silly audit   'merge-descriptors': [ '2.0.0' ],
+272 silly audit   'mime-db': [ '1.54.0' ],
+272 silly audit   'mime-types': [ '3.0.2' ],
+272 silly audit   minimatch: [ '9.0.6', '10.2.2' ],
+272 silly audit   minipass: [ '7.1.3' ],
+272 silly audit   ms: [ '2.1.3' ],
+272 silly audit   negotiator: [ '1.0.0' ],
+272 silly audit   'node-domexception': [ '1.0.0' ],
+272 silly audit   'node-fetch': [ '3.3.2' ],
+272 silly audit   nodemon: [ '3.1.14' ],
+272 silly audit   readdirp: [ '3.6.0' ],
+272 silly audit   'normalize-path': [ '3.0.0' ],
+272 silly audit   'object-assign': [ '4.1.1' ],
+272 silly audit   'object-inspect': [ '1.13.4' ],
+272 silly audit   'on-finished': [ '2.4.1' ],
+272 silly audit   once: [ '1.4.0' ],
+272 silly audit   'p-retry': [ '4.6.2' ],
+272 silly audit   'package-json-from-dist': [ '1.0.1' ],
+272 silly audit   parseurl: [ '1.3.3' ],
+272 silly audit   'path-key': [ '3.1.1' ],
+272 silly audit   'path-scurry': [ '1.11.1' ],
+272 silly audit   'path-to-regexp': [ '8.3.0' ],
+272 silly audit   picomatch: [ '2.3.1' ],
+272 silly audit   retry: [ '0.13.1' ],
+272 silly audit   'signal-exit': [ '4.1.0' ],
+272 silly audit   protobufjs: [ '7.5.4' ],
+272 silly audit   'proxy-addr': [ '2.0.7' ],
+272 silly audit   'pstree.remy': [ '1.1.8' ],
+272 silly audit   qs: [ '6.15.0' ],
+272 silly audit   'range-parser': [ '1.2.1' ],
+272 silly audit   'raw-body': [ '3.0.2' ],
+272 silly audit   rimraf: [ '5.0.10' ],
+272 silly audit   router: [ '2.2.0' ],
+272 silly audit   'safe-buffer': [ '5.2.1' ],
+272 silly audit   'safer-buffer': [ '2.1.2' ],
+272 silly audit   semver: [ '7.7.4' ],
+272 silly audit   send: [ '1.2.1' ],
+272 silly audit   'serve-static': [ '2.2.1' ],
+272 silly audit   setprototypeof: [ '1.2.0' ],
+272 silly audit   'shebang-command': [ '2.0.0' ],
+272 silly audit   'shebang-regex': [ '3.0.0' ],
+272 silly audit   'side-channel': [ '1.1.0' ],
+272 silly audit   'side-channel-list': [ '1.0.0' ],
+272 silly audit   'side-channel-map': [ '1.0.1' ],
+272 silly audit   'side-channel-weakmap': [ '1.0.2' ],
+272 silly audit   'simple-update-notifier': [ '2.0.0' ],
+272 silly audit   statuses: [ '2.0.2' ],
+272 silly audit   'string-width': [ '5.1.2', '4.2.3' ],
+272 silly audit   'strip-ansi': [ '6.0.1', '7.1.2' ],
+272 silly audit   'supports-color': [ '5.5.0' ],
+272 silly audit   'to-regex-range': [ '5.0.1' ],
+272 silly audit   toidentifier: [ '1.0.1' ],
+272 silly audit   touch: [ '3.1.1' ],
+272 silly audit   'ts-node': [ '10.9.2' ],
+272 silly audit   'type-is': [ '2.0.1' ],
+272 silly audit   typescript: [ '5.9.3' ],
+272 silly audit   undefsafe: [ '2.0.5' ],
+272 silly audit   'undici-types': [ '7.18.2' ],
+272 silly audit   unpipe: [ '1.0.0' ],
+272 silly audit   'v8-compile-cache-lib': [ '3.0.1' ],
+272 silly audit   vary: [ '1.1.2' ],
+272 silly audit   'web-streams-polyfill': [ '3.3.3' ],
+272 silly audit   which: [ '2.0.2' ],
+272 silly audit   'wrap-ansi': [ '8.1.0', '7.0.0' ],
+272 silly audit   wrappy: [ '1.0.2' ],
+272 silly audit   ws: [ '8.19.0' ],
+272 silly audit   yn: [ '3.1.1' ],
+272 silly audit   zod: [ '4.3.6' ],
+272 silly audit   '@prisma/client': [ '6.4.1' ],
+272 silly audit   prisma: [ '6.4.1' ],
+272 silly audit   '@prisma/engines': [ '6.4.1' ],
+272 silly audit   esbuild: [ '0.27.3' ],
+272 silly audit   'esbuild-register': [ '3.6.0' ],
+272 silly audit   '@prisma/debug': [ '6.4.1' ],
+272 silly audit   '@prisma/engines-version': [ '6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d' ],
+272 silly audit   '@prisma/fetch-engine': [ '6.4.1' ],
+272 silly audit   '@prisma/get-platform': [ '6.4.1' ],
+272 silly audit   '@esbuild/aix-ppc64': [ '0.27.3' ],
+272 silly audit   '@esbuild/android-arm': [ '0.27.3' ],
+272 silly audit   '@esbuild/android-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/android-x64': [ '0.27.3' ],
+272 silly audit   '@esbuild/darwin-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/darwin-x64': [ '0.27.3' ],
+272 silly audit   '@esbuild/freebsd-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/freebsd-x64': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-arm': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-ia32': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-loong64': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-mips64el': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-ppc64': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-riscv64': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-s390x': [ '0.27.3' ],
+272 silly audit   '@esbuild/linux-x64': [ '0.27.3' ],
+272 silly audit   '@esbuild/netbsd-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/netbsd-x64': [ '0.27.3' ],
+272 silly audit   '@esbuild/openbsd-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/openbsd-x64': [ '0.27.3' ],
+272 silly audit   '@esbuild/openharmony-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/sunos-x64': [ '0.27.3' ],
+272 silly audit   '@esbuild/win32-arm64': [ '0.27.3' ],
+272 silly audit   '@esbuild/win32-ia32': [ '0.27.3' ],
+272 silly audit   '@esbuild/win32-x64': [ '0.27.3' ]
+272 silly audit }
+273 http cache @esbuild/darwin-arm64@https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.27.3.tgz 0ms (cache hit)
+274 http cache esbuild-register@https://registry.npmjs.org/esbuild-register/-/esbuild-register-3.6.0.tgz 0ms (cache hit)
+275 http cache fsevents@https://registry.npmjs.org/fsevents/-/fsevents-2.3.3.tgz 0ms (cache hit)
+276 http cache @prisma/client@https://registry.npmjs.org/@prisma/client/-/client-6.4.1.tgz 0ms (cache hit)
+277 http cache @prisma/engines-version@https://registry.npmjs.org/@prisma/engines-version/-/engines-version-6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d.tgz 0ms (cache hit)
+278 http cache esbuild@https://registry.npmjs.org/esbuild/-/esbuild-0.27.3.tgz 0ms (cache hit)
+279 http cache @prisma/debug@https://registry.npmjs.org/@prisma/debug/-/debug-6.4.1.tgz 0ms (cache hit)
+280 http cache prisma@https://registry.npmjs.org/prisma/-/prisma-6.4.1.tgz 0ms (cache hit)
+281 http cache @prisma/fetch-engine@https://registry.npmjs.org/@prisma/fetch-engine/-/fetch-engine-6.4.1.tgz 0ms (cache hit)
+282 http cache @prisma/get-platform@https://registry.npmjs.org/@prisma/get-platform/-/get-platform-6.4.1.tgz 0ms (cache hit)
+283 http cache @prisma/engines@https://registry.npmjs.org/@prisma/engines/-/engines-6.4.1.tgz 0ms (cache hit)
+284 silly tarball no local data for @esbuild/darwin-arm64@https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.27.3.tgz. Extracting by manifest.
+285 silly tarball no local data for esbuild-register@https://registry.npmjs.org/esbuild-register/-/esbuild-register-3.6.0.tgz. Extracting by manifest.
+286 silly tarball no local data for @prisma/client@https://registry.npmjs.org/@prisma/client/-/client-6.4.1.tgz. Extracting by manifest.
+287 silly tarball no local data for @prisma/engines-version@https://registry.npmjs.org/@prisma/engines-version/-/engines-version-6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d.tgz. Extracting by manifest.
+288 silly tarball no local data for @prisma/debug@https://registry.npmjs.org/@prisma/debug/-/debug-6.4.1.tgz. Extracting by manifest.
+289 silly tarball no local data for esbuild@https://registry.npmjs.org/esbuild/-/esbuild-0.27.3.tgz. Extracting by manifest.
+290 silly tarball no local data for prisma@https://registry.npmjs.org/prisma/-/prisma-6.4.1.tgz. Extracting by manifest.
+291 silly tarball no local data for @prisma/fetch-engine@https://registry.npmjs.org/@prisma/fetch-engine/-/fetch-engine-6.4.1.tgz. Extracting by manifest.
+292 silly tarball no local data for @prisma/get-platform@https://registry.npmjs.org/@prisma/get-platform/-/get-platform-6.4.1.tgz. Extracting by manifest.
+293 silly tarball no local data for @prisma/engines@https://registry.npmjs.org/@prisma/engines/-/engines-6.4.1.tgz. Extracting by manifest.
+294 http fetch GET 200 https://registry.npmjs.org/esbuild-register/-/esbuild-register-3.6.0.tgz 123ms (cache miss)
+295 http fetch GET 200 https://registry.npmjs.org/esbuild/-/esbuild-0.27.3.tgz 122ms (cache miss)
+296 http fetch POST 200 https://registry.npmjs.org/-/npm/v1/security/advisories/bulk 503ms
+297 silly audit report {
+297 silly audit report   minimatch: [
+297 silly audit report     {
+297 silly audit report       id: 1113371,
+297 silly audit report       url: 'https://github.com/advisories/GHSA-3ppc-4f35-3m26',
+297 silly audit report       title: 'minimatch has a ReDoS via repeated wildcards with non-matching literal in pattern',
+297 silly audit report       severity: 'high',
+297 silly audit report       vulnerable_versions: '<10.2.1',
+297 silly audit report       cwe: [Array],
+297 silly audit report       cvss: [Object]
+297 silly audit report     }
+297 silly audit report   ]
+297 silly audit report }
+298 silly packumentCache corgi:https://registry.npmjs.org/minimatch cache-miss
+299 http fetch GET 200 https://registry.npmjs.org/@prisma/engines-version/-/engines-version-6.4.0-29.a9055b89e58b4b5bfb59600785423b1db3d0e75d.tgz 509ms (cache miss)
+300 http fetch GET 200 https://registry.npmjs.org/@esbuild/darwin-arm64/-/darwin-arm64-0.27.3.tgz 658ms (cache miss)
+301 http fetch GET 200 https://registry.npmjs.org/minimatch 179ms (cache revalidated)
+302 silly packumentCache corgi:https://registry.npmjs.org/minimatch set size:154574 disposed:false
+303 silly packumentCache corgi:https://registry.npmjs.org/glob cache-miss
+304 http fetch GET 200 https://registry.npmjs.org/glob 265ms (cache revalidated)
+305 silly packumentCache corgi:https://registry.npmjs.org/glob set size:199194 disposed:false
+306 silly packumentCache corgi:https://registry.npmjs.org/rimraf cache-miss
+307 http fetch GET 200 https://registry.npmjs.org/@prisma/debug/-/debug-6.4.1.tgz 1070ms (cache miss)
+308 http fetch GET 200 https://registry.npmjs.org/@prisma/engines/-/engines-6.4.1.tgz 1069ms (cache miss)
+309 http fetch GET 200 https://registry.npmjs.org/rimraf 285ms (cache revalidated)
+310 silly packumentCache corgi:https://registry.npmjs.org/rimraf set size:87794 disposed:false
+311 silly packumentCache corgi:https://registry.npmjs.org/gaxios cache-miss
+312 http fetch GET 200 https://registry.npmjs.org/@prisma/client/-/client-6.4.1.tgz 1362ms (cache miss)
+313 http fetch GET 200 https://registry.npmjs.org/gaxios 148ms (cache revalidated)
+314 silly packumentCache corgi:https://registry.npmjs.org/gaxios set size:194352 disposed:false
+315 silly packumentCache corgi:https://registry.npmjs.org/gcp-metadata cache-miss
+316 silly packumentCache corgi:https://registry.npmjs.org/google-auth-library cache-miss
+317 silly packumentCache corgi:https://registry.npmjs.org/gtoken cache-miss
+318 http fetch GET 200 https://registry.npmjs.org/@prisma/fetch-engine/-/fetch-engine-6.4.1.tgz 1392ms (cache miss)
+319 http fetch GET 200 https://registry.npmjs.org/@prisma/get-platform/-/get-platform-6.4.1.tgz 1456ms (cache miss)
+320 http fetch GET 200 https://registry.npmjs.org/gcp-metadata 109ms (cache revalidated)
+321 silly packumentCache corgi:https://registry.npmjs.org/gcp-metadata set size:87172 disposed:false
+322 http fetch GET 200 https://registry.npmjs.org/gtoken 128ms (cache revalidated)
+323 silly packumentCache corgi:https://registry.npmjs.org/gtoken set size:74319 disposed:false
+324 http fetch GET 200 https://registry.npmjs.org/google-auth-library 284ms (cache revalidated)
+325 silly packumentCache corgi:https://registry.npmjs.org/google-auth-library set size:364244 disposed:false
+326 http fetch GET 200 https://registry.npmjs.org/prisma/-/prisma-6.4.1.tgz 3914ms (cache miss)
+327 info run prisma@6.4.1 preinstall node_modules/prisma node scripts/preinstall-entry.js
+328 info run prisma@6.4.1 preinstall { code: 0, signal: null }
+329 info run @prisma/client@6.4.1 postinstall node_modules/@prisma/client node scripts/postinstall.js
+330 info run @prisma/engines@6.4.1 postinstall node_modules/@prisma/engines node scripts/postinstall.js
+331 info run esbuild@0.27.3 postinstall node_modules/esbuild node install.js
+332 info run @prisma/engines@6.4.1 postinstall { code: 0, signal: null }
+333 info run esbuild@0.27.3 postinstall { code: 0, signal: null }
+334 info run @prisma/client@6.4.1 postinstall { code: 0, signal: null }
+335 silly ADD node_modules/@esbuild/darwin-arm64
+336 silly ADD node_modules/esbuild-register
+337 silly ADD node_modules/esbuild
+338 silly ADD node_modules/fsevents
+339 silly REMOVE node_modules/@types/react
+340 silly REMOVE node_modules/@standard-schema/spec
+341 silly CHANGE node_modules/@prisma/get-platform
+342 silly REMOVE node_modules/@prisma/get-platform/node_modules/@prisma/debug
+343 silly REMOVE node_modules/@prisma/studio-core
+344 silly REMOVE node_modules/@prisma/query-plan-executor
+345 silly CHANGE node_modules/@prisma/engines-version
+346 silly CHANGE node_modules/@prisma/client
+347 silly CHANGE node_modules/@prisma/fetch-engine
+348 silly REMOVE node_modules/@prisma/fetch-engine/node_modules/@prisma/get-platform
+349 silly CHANGE node_modules/@prisma/engines
+350 silly REMOVE node_modules/@prisma/engines/node_modules/@prisma/get-platform
+351 silly REMOVE node_modules/@prisma/dev
+352 silly REMOVE node_modules/@prisma/client-runtime-utils
+353 silly REMOVE node_modules/@prisma/config
+354 silly CHANGE node_modules/@prisma/debug
+355 silly REMOVE node_modules/@mrleebo/prisma-ast
+356 silly REMOVE node_modules/@hono/node-server
+357 silly REMOVE node_modules/@electric-sql/pglite
+358 silly REMOVE node_modules/@electric-sql/pglite-tools
+359 silly REMOVE node_modules/@electric-sql/pglite-socket
+360 silly REMOVE node_modules/zeptomatch
+361 silly REMOVE node_modules/@chevrotain/gast
+362 silly REMOVE node_modules/@chevrotain/utils
+363 silly REMOVE node_modules/@chevrotain/types
+364 silly REMOVE node_modules/@chevrotain/cst-dts-gen
+365 silly REMOVE node_modules/tinyexec
+366 silly REMOVE node_modules/valibot
+367 silly REMOVE node_modules/std-env
+368 silly REMOVE node_modules/sqlstring
+369 silly REMOVE node_modules/seq-queue
+370 silly REMOVE node_modules/react-dom
+371 silly REMOVE node_modules/scheduler
+372 silly REMOVE node_modules/rc9
+373 silly REMOVE node_modules/readdirp
+374 silly REMOVE node_modules/regexp-to-ast
+375 silly REMOVE node_modules/remeda
+376 silly REMOVE node_modules/react
+377 silly CHANGE node_modules/prisma
+378 silly REMOVE node_modules/proper-lockfile
+379 silly REMOVE node_modules/proper-lockfile/node_modules/retry
+380 silly REMOVE node_modules/proper-lockfile/node_modules/signal-exit
+381 silly REMOVE node_modules/pure-rand
+382 silly REMOVE node_modules/postgres
+383 silly REMOVE node_modules/pkg-types
+384 silly REMOVE node_modules/perfect-debounce
+385 silly REMOVE node_modules/pathe
+386 silly REMOVE node_modules/ohash
+387 silly REMOVE node_modules/nypm
+388 silly REMOVE node_modules/nypm/node_modules/citty
+389 silly REMOVE node_modules/node-fetch-native
+390 silly REMOVE node_modules/named-placeholders
+391 silly REMOVE node_modules/mysql2
+392 silly REMOVE node_modules/lru.min
+393 silly REMOVE node_modules/lodash
+394 silly REMOVE node_modules/lilconfig
+395 silly REMOVE node_modules/jiti
+396 silly REMOVE node_modules/is-property
+397 silly REMOVE node_modules/giget
+398 silly REMOVE node_modules/hono
+399 silly REMOVE node_modules/http-status-codes
+400 silly REMOVE node_modules/grammex
+401 silly REMOVE node_modules/graphmatch
+402 silly REMOVE node_modules/graceful-fs
+403 silly REMOVE node_modules/get-port-please
+404 silly REMOVE node_modules/generate-function
+405 silly REMOVE node_modules/exsolve
+406 silly REMOVE node_modules/fast-check
+407 silly REMOVE node_modules/empathic
+408 silly REMOVE node_modules/destr
+409 silly REMOVE node_modules/chokidar
+410 silly REMOVE node_modules/effect
+411 silly REMOVE node_modules/denque
+412 silly REMOVE node_modules/defu
+413 silly REMOVE node_modules/deepmerge-ts
+414 silly REMOVE node_modules/csstype
+415 silly REMOVE node_modules/citty
+416 silly REMOVE node_modules/consola
+417 silly REMOVE node_modules/chevrotain
+418 silly REMOVE node_modules/confbox
+419 silly REMOVE node_modules/c12
+420 silly REMOVE node_modules/c12/node_modules/dotenv
+421 silly REMOVE node_modules/aws-ssl-profiles
+422 verbose cwd /Users/rrg/Documents/Saytlar/Vibe code/oqituvchiai/backend
+423 verbose os Darwin 25.0.0
+424 verbose node v24.13.0
+425 verbose npm  v11.6.2
+426 verbose exit 0
+427 info ok

@@ -67,11 +67,11 @@ function SlideView({ slides }: { slides: any[] }) {
             <div className="flex-1 p-8 flex flex-col justify-center items-center text-center space-y-6 overflow-y-auto">
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-3xl h-64 md:h-80 rounded-3xl overflow-hidden shadow-xl border-[6px] border-white relative shrink-0">
                     <img
-                        src={slide.imageKeyword ? `https://loremflickr.com/1200/600/${encodeURIComponent((slide.imageKeyword || '').replace(/\s+/g, ''))}/all?lock=${idx + 1}` : `https://loremflickr.com/1200/600/education,school/all?lock=${idx + 100}`}
+                        src={slide.imageKeyword ? `https://tse1.mm.bing.net/th?q=${encodeURIComponent(slide.imageKeyword + ' desktop wallpaper')}&w=1200&h=600&c=7&rs=1&p=0` : `https://tse1.mm.bing.net/th?q=education+school+background&w=1200&h=600&c=7`}
                         alt={slide.title}
                         className="w-full h-full object-cover"
                         loading="lazy"
-                        onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${idx + 100}/1200/600`; }}
+                        onError={(e) => { e.currentTarget.src = `https://tse1.mm.bing.net/th?q=blank+background&w=1200&h=600&c=7`; }}
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
                         <h1 className="text-3xl md:text-4xl font-black text-white leading-tight drop-shadow-md text-left">{slide.title}</h1>

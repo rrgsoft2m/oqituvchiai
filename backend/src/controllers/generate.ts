@@ -29,7 +29,7 @@ Til: ${language}
 Quyidagi tuzilmaga ega JSON formatida (qoshimcha matnlarsiz, faqat JSON formatida) qaytar:
 {
   "slides": [
-    { "title": "Slayd 1", "points": ["punkt 1", "punkt 2"], "imageKeyword": "education,math" } // 10 dona slayd. Har bir slaydning 'imageKeyword' maydoniga ushbu slayd mavzusiga mos keluvchi 1 ta yoki 2 ta INGLIZ tilidagi qidiruv kalit so'zini yozing (masalan, 'school,student', 'chemistry', 'robotics'). Rasm qidirish uchun. Boshqa gap yozmang.
+    { "title": "Slayd 1 nomi", "points": ["Slayd uchun birinchi batafsil punkt. Matn kamida 2-3 ta gapdan iborat bo'lib, o'quvchiga mavzuni chuqur tushuntirishi kerak.", "Ikkinchi uzun va qiziqarli ma'lumot. Ushbu slayd mavzusi bo'yicha ko'proq nazariy qism va rekvizitlar yozib qoldiring.", "Uchinchi qism, qo'shimcha fakt yoki tavsif. Har bir slaydda ma'lumotlar boy va keng bo'lishi shart."], "imageKeyword": "python,programming" } // DASTUR BO'YICHA 10 dona slayd! HAR BIR SLAYDDA kamida 3-4 ta UZUN va BATAFSIL (faktlarga boy) punktlar bo'lishi shart. 'imageKeyword' maydoniga rasm qidirish uchun aynan shu slaydga xos ENGLIZ TILIDAGI 1-2 ta eng aniq kalit so'zni yozing (masalan, 'python,code', 'algorithm,chart', 'biology,dna').
   ],
   "tests": [
     { "question": "Savol?", "options": ["A variant", "B variant", "C variant", "D variant"], "answerIndex": 0 } // 10 ta. 'answerIndex' - to'g'ri variantning arraydagi (0=A, 1=B, 2=C, 3=D) tartib raqami

@@ -12,6 +12,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
     const pathname = usePathname();
     const { user, hydrate, logout } = useAuthStore();
     const [mounted, setMounted] = useState(false);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         hydrate();
@@ -28,11 +29,17 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
     return (
         <div className="flex h-screen bg-slate-100 font-sans">
+            {/* Mobile Overlay */}
+            {isMobileMenuOpen && (
+                <div
+                    className="fixed inset-0 bg-black/20 z-20 md:hidden"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                />
+            )}
+
             {/* Sidebar */}
-            <motion.aside
-                initial={{ x: -250 }}
-                animate={{ x: 0 }}
-                className="w-64 bg-white/70 backdrop-blur-xl border-r border-gray-200 hidden md:flex flex-col shadow-xl z-10"
+            <aside
+                className={`fixed md:relative top-0 left-0 h-full w-64 bg-white/95 md:bg-white/70 backdrop-blur-xl border-r border-gray-200 flex flex-col shadow-xl z-30 transform transition-transform duration-300 ${isMobileMenuOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0"}`}
             >
                 <div className="p-6 flex items-center gap-3 border-b border-gray-100">
                     <img src="https://buxedu.uz/static/images/logo.png" className="w-10" />
@@ -40,10 +47,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </div>
 
                 <div className="flex-1 p-4 space-y-2 mt-4">
-                    <Link href="/dashboard" className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${pathname === "/dashboard" ? "bg-indigo-600 text-white shadow-md" : "text-gray-600 hover:bg-indigo-50"}`}>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} href="/dashboard" className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${pathname === "/dashboard" ? "bg-indigo-600 text-white shadow-md" : "text-gray-600 hover:bg-indigo-50"}`}>
                         <Home size={20} /> <span className="font-medium">Generator</span>
                     </Link>
-                    <Link href="/dashboard/history" className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${pathname === "/dashboard/history" ? "bg-indigo-600 text-white shadow-md" : "text-gray-600 hover:bg-indigo-50"}`}>
+                    <Link onClick={() => setIsMobileMenuOpen(false)} href="/dashboard/history" className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${pathname === "/dashboard/history" ? "bg-indigo-600 text-white shadow-md" : "text-gray-600 hover:bg-indigo-50"}`}>
                         <History size={20} /> <span className="font-medium">Tarix</span>
                     </Link>
                 </div>
@@ -57,7 +64,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <LogOut size={16} /> Chiqish
                     </button>
                 </div>
-            </motion.aside>
+            </aside>
 
             {/* Main Content */}
             <main className="flex-1 flex flex-col h-screen overflow-hidden bg-gradient-to-br from-blue-50/50 to-indigo-100/30">
@@ -66,7 +73,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <img src="https://buxedu.uz/static/images/logo.png" className="w-8" />
                         <h1 className="font-bold text-lg text-indigo-900">O'qituvchi AI</h1>
                     </div>
-                    <button className="text-gray-600"><Menu size={24} /></button>
+                    <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-600"><Menu size={24} /></button>
                 </header>
 
                 <div className="flex-1 overflow-auto p-4 md:p-8">

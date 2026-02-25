@@ -29,7 +29,7 @@ Til: ${language}
 Quyidagi tuzilmaga ega JSON formatida (qoshimcha matnlarsiz, faqat JSON formatida) qaytar:
 {
   "slides": [
-    { "title": "Slayd 1", "points": ["punkt 1", "punkt 2"], "imagePrompt": "A highly detailed, visually appealing educational illustration for the topic: [Mavzu]. Vibrant colors, modern 3d render style." } // 10 dona slayd. Har bir slaydning 'imagePrompt' maydoniga rasm generatsiya qilish uchun ingliz tilida mukammal va tasviriy promt yozing.
+    { "title": "Slayd 1", "points": ["punkt 1", "punkt 2"], "imageKeyword": "education,math" } // 10 dona slayd. Har bir slaydning 'imageKeyword' maydoniga ushbu slayd mavzusiga mos keluvchi 1 ta yoki 2 ta INGLIZ tilidagi qidiruv kalit so'zini yozing (masalan, 'school,student', 'chemistry', 'robotics'). Rasm qidirish uchun. Boshqa gap yozmang.
   ],
   "tests": [
     { "question": "Savol?", "options": ["A variant", "B variant", "C variant", "D variant"], "answerIndex": 0 } // 10 ta. 'answerIndex' - to'g'ri variantning arraydagi (0=A, 1=B, 2=C, 3=D) tartib raqami

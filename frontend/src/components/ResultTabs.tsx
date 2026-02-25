@@ -65,23 +65,18 @@ function SlideView({ slides }: { slides: any[] }) {
     return (
         <div className="flex flex-col h-full bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl">
             <div className="flex-1 p-8 flex flex-col justify-center items-center text-center space-y-6 overflow-y-auto">
-                {slide.imagePrompt && (
-                    <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-3xl h-64 md:h-80 rounded-3xl overflow-hidden shadow-xl border-[6px] border-white relative shrink-0">
-                        <img
-                            src={`https://image.pollinations.ai/prompt/${encodeURIComponent(slide.imagePrompt)}?nologo=true&width=1200&height=600`}
-                            alt={slide.title}
-                            className="w-full h-full object-cover"
-                            loading="lazy"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
-                            <h1 className="text-3xl md:text-4xl font-black text-white leading-tight drop-shadow-md text-left">{slide.title}</h1>
-                        </div>
-                    </motion.div>
-                )}
-
-                {!slide.imagePrompt && (
-                    <h1 className="text-4xl md:text-5xl font-black text-indigo-900 leading-tight bg-clip-text text-transparent bg-gradient-to-br from-indigo-900 to-indigo-600">{slide.title}</h1>
-                )}
+                <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-3xl h-64 md:h-80 rounded-3xl overflow-hidden shadow-xl border-[6px] border-white relative shrink-0">
+                    <img
+                        src={slide.imageKeyword ? `https://loremflickr.com/1200/600/education,${encodeURIComponent(slide.imageKeyword)}/all?random=${idx}` : `https://loremflickr.com/1200/600/education,school/all?random=${idx + 100}`}
+                        alt={slide.title}
+                        className="w-full h-full object-cover"
+                        loading="lazy"
+                        onError={(e) => { e.currentTarget.src = `https://picsum.photos/seed/${idx + 100}/1200/600`; }}
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent flex items-end p-6">
+                        <h1 className="text-3xl md:text-4xl font-black text-white leading-tight drop-shadow-md text-left">{slide.title}</h1>
+                    </div>
+                </motion.div>
 
                 <ul className="text-left space-y-4 max-w-4xl mt-6 w-full">
                     {slide.points?.map((p: string, i: number) => (

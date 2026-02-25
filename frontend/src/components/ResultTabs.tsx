@@ -67,7 +67,7 @@ function SlideView({ slides }: { slides: any[] }) {
             <div className="flex-1 p-8 flex flex-col justify-center items-center text-center space-y-6 overflow-y-auto">
                 <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="w-full max-w-3xl h-64 md:h-80 rounded-3xl overflow-hidden shadow-xl border-[6px] border-white relative shrink-0">
                     <img
-                        src={slide.imageKeyword ? `https://loremflickr.com/1200/600/education,${encodeURIComponent(slide.imageKeyword)}/all?random=${idx}` : `https://loremflickr.com/1200/600/education,school/all?random=${idx + 100}`}
+                        src={slide.imageKeyword ? `https://loremflickr.com/1200/600/${encodeURIComponent((slide.imageKeyword || '').replace(/\s+/g, ''))}/all?lock=${idx + 1}` : `https://loremflickr.com/1200/600/education,school/all?lock=${idx + 100}`}
                         alt={slide.title}
                         className="w-full h-full object-cover"
                         loading="lazy"

@@ -156,7 +156,7 @@ export default function Register() {
                                     </div>
 
                                     <div className="pt-4 flex gap-3">
-                                        <button type="button" onClick={() => setStep(1)} className="w-1/3 py-3 rounded-xl font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">Oyqaga</button>
+                                        <button type="button" onClick={() => setStep(1)} className="w-1/3 py-3 rounded-xl font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">Orqaga</button>
                                         <button disabled={loading} type="submit" className="w-2/3 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow-md hover:shadow-lg disabled:opacity-70 transition-all">
                                             {loading ? "Kuting..." : "Ro'yxatdan o'tish"}
                                         </button>

@@ -10,8 +10,8 @@ import { CheckCircle2 } from "lucide-react";
 
 const SUBSCRIPTIONS = [
     { id: "FREE", name: "Bepul", price: "0 so'm", period: "1 oy", features: ["5 tagacha kontent yaratish", "Slayd, Test, Q&A", "Interaktiv o'yin, Krossvord", "Mantiqiy jumboq"], color: "from-green-400 to-emerald-500" },
-    { id: "USTOZ", name: "Ustoz", price: "20 000 so'm", period: "1 oy", features: ["100 tagacha kontent yaratish", "Barcha modullarga to'liq kirish", "PDF va Print qilish", "Ustunlikli tezlik"], color: "from-blue-400 to-indigo-500", popular: true },
-    { id: "KATTA_USTOZ", name: "Katta ustoz", price: "99 000 so'm", period: "1 oy", features: ["250 tagacha kontent yaratish", "VIP status", "Cheklanmagan tarix", "Email orqali yordam"], color: "from-purple-500 to-pink-500" },
+    { id: "USTOZ", name: "Ustoz", price: "20 000 so'm", period: "1 oy", features: ["25 tagacha kontent yaratish", "Barcha modullarga to'liq kirish", "PDF va Print qilish", "Ustunlikli tezlik"], color: "from-blue-400 to-indigo-500", popular: true },
+    { id: "KATTA_USTOZ", name: "Katta ustoz", price: "99 000 so'm", period: "1 oy", features: ["50 tagacha kontent yaratish", "VIP status", "Cheklanmagan tarix", "Email orqali yordam"], color: "from-purple-500 to-pink-500" },
 ];
 
 export default function Register() {

@@ -14,6 +14,8 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use(helmet());
+app.set("trust proxy", 1); // Enable trusting the reverse proxy (like Render)
+
 
 const limiter = rateLimit({
     windowMs: 15 * 60 * 1000,

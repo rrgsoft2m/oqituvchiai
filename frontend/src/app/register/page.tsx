@@ -1,24 +1,32 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { api } from "@/lib/api";
 import { useAuthStore } from "@/store/useAuthStore";
+import { useLanguageStore } from "@/store/useLanguageStore";
+import { t } from "@/lib/i18n";
 import { CheckCircle2 } from "lucide-react";
-
-const SUBSCRIPTIONS = [
-    { id: "FREE", name: "Bepul", price: "0 so'm", period: "1 oy", features: ["5 tagacha kontent yaratish", "Slayd, Test, Q&A", "Interaktiv o'yin, Krossvord", "Mantiqiy jumboq"], color: "from-green-400 to-emerald-500" },
-    { id: "USTOZ", name: "Ustoz", price: "20 000 so'm", period: "1 oy", features: ["25 tagacha kontent yaratish", "Barcha modullarga to'liq kirish", "PDF va Print qilish", "Ustunlikli tezlik"], color: "from-blue-400 to-indigo-500", popular: true },
-    { id: "KATTA_USTOZ", name: "Katta ustoz", price: "99 000 so'm", period: "1 oy", features: ["50 tagacha kontent yaratish", "VIP status", "Cheklanmagan tarix", "Email orqali yordam"], color: "from-purple-500 to-pink-500" },
-];
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function Register() {
     const router = useRouter();
     const loginFn = useAuthStore((state) => state.login);
+    const { locale, hydrate: hydrateLocale } = useLanguageStore();
     const [step, setStep] = useState<1 | 2>(1);
     const [selectedPlan, setSelectedPlan] = useState("FREE");
+
+    useEffect(() => {
+        hydrateLocale();
+    }, [hydrateLocale]);
+
+    const SUBSCRIPTIONS = [
+        { id: "FREE", name: t(locale, "register.free"), price: t(locale, "register.free.price"), period: t(locale, "register.period"), features: [t(locale, "register.free.f1"), t(locale, "register.free.f2"), t(locale, "register.free.f3"), t(locale, "register.free.f4")], color: "from-green-400 to-emerald-500" },
+        { id: "USTOZ", name: t(locale, "register.ustoz"), price: t(locale, "register.ustoz.price"), period: t(locale, "register.period"), features: [t(locale, "register.ustoz.f1"), t(locale, "register.ustoz.f2"), t(locale, "register.ustoz.f3"), t(locale, "register.ustoz.f4")], color: "from-blue-400 to-indigo-500", popular: true },
+        { id: "KATTA_USTOZ", name: t(locale, "register.kattaUstoz"), price: t(locale, "register.kattaUstoz.price"), period: t(locale, "register.period"), features: [t(locale, "register.kattaUstoz.f1"), t(locale, "register.kattaUstoz.f2"), t(locale, "register.kattaUstoz.f3"), t(locale, "register.kattaUstoz.f4")], color: "from-purple-500 to-pink-500" },
+    ];
 
     // Form
     const [firstName, setFirstName] = useState("");
@@ -37,14 +45,19 @@ export default function Register() {
             loginFn(res.data.user, res.data.token);
             router.push("/dashboard");
         } catch (err: any) {
-            setError(err.response?.data?.message || "Xatolik yuz berdi");
+            setError(err.response?.data?.message || t(locale, "app.error"));
         } finally {
             setLoading(false);
         }
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 p-4 md:p-8 flex flex-col items-center justify-center">
+        <div className="min-h-screen bg-slate-50 p-4 md:p-8 flex flex-col items-center justify-center relative">
+            {/* Language switcher */}
+            <div className="absolute top-4 right-4 z-10">
+                <LanguageSwitcher variant="full" />
+            </div>
+
             <div className="w-full max-w-5xl mx-auto">
 
                 {/* Progress header */}
@@ -70,8 +83,8 @@ export default function Register() {
                             className="space-y-8"
                         >
                             <div className="text-center mb-10">
-                                <h1 className="text-4xl font-extrabold text-slate-900">Tarifni tanlang</h1>
-                                <p className="text-gray-500 mt-2 text-lg">O'zingizga mos ta'lim rejasini tanlang va o'qitishni osonlashtiring</p>
+                                <h1 className="text-4xl font-extrabold text-slate-900">{t(locale, "register.selectPlan")}</h1>
+                                <p className="text-gray-500 mt-2 text-lg">{t(locale, "register.selectPlanDesc")}</p>
                             </div>
 
                             <div className="grid md:grid-cols-3 gap-6">
@@ -83,7 +96,7 @@ export default function Register() {
                                     >
                                         {plan.popular && (
                                             <div className="absolute top-0 right-8 transform -translate-y-1/2 bg-gradient-to-r from-orange-400 to-red-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg">
-                                                Eng ommabop
+                                                {t(locale, "register.popular")}
                                             </div>
                                         )}
                                         <div className="bg-white/95 backdrop-blur-sm rounded-[22px] h-full p-6 flex flex-col">
@@ -104,7 +117,7 @@ export default function Register() {
                                                 className={`mt-8 w-full py-3 rounded-xl font-semibold text-white bg-gradient-to-r ${plan.color} hover:shadow-lg transition-all`}
                                                 onClick={() => { setSelectedPlan(plan.id); setStep(2); }}
                                             >
-                                                Tanlash
+                                                {t(locale, "register.select")}
                                             </button>
                                         </div>
                                     </div>
@@ -112,7 +125,7 @@ export default function Register() {
                             </div>
 
                             <div className="text-center mt-6 text-gray-500 font-medium">
-                                Accountingiz bormi? <Link href="/login" className="text-indigo-600 hover:underline">Kirish</Link>
+                                {t(locale, "register.hasAccount")} <Link href="/login" className="text-indigo-600 hover:underline">{t(locale, "register.login")}</Link>
                             </div>
                         </motion.div>
                     ) : (
@@ -125,9 +138,9 @@ export default function Register() {
                         >
                             <div className="bg-white/80 backdrop-blur-xl rounded-3xl p-8 shadow-2xl border border-white">
                                 <div className="text-center mb-6">
-                                    <h2 className="text-2xl font-bold mb-2">Shaxsiy ma'lumotlar</h2>
+                                    <h2 className="text-2xl font-bold mb-2">{t(locale, "register.personalInfo")}</h2>
                                     <p className="text-sm text-gray-500">
-                                        Siz <span className="font-bold text-indigo-600">{SUBSCRIPTIONS.find(s => s.id === selectedPlan)?.name}</span> tarifini tanladingiz
+                                        {t(locale, "register.selectedPlan", { plan: SUBSCRIPTIONS.find(s => s.id === selectedPlan)?.name || "" })}
                                     </p>
                                 </div>
 
@@ -136,29 +149,29 @@ export default function Register() {
 
                                     <div className="grid grid-cols-2 gap-4">
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-1">Ism</label>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">{t(locale, "register.firstName")}</label>
                                             <input required type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none" value={firstName} onChange={e => setFirstName(e.target.value)} />
                                         </div>
                                         <div>
-                                            <label className="block text-sm font-medium text-gray-700 mb-1">Familiya</label>
+                                            <label className="block text-sm font-medium text-gray-700 mb-1">{t(locale, "register.lastName")}</label>
                                             <input required type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none" value={lastName} onChange={e => setLastName(e.target.value)} />
                                         </div>
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Login</label>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">{t(locale, "login.username")}</label>
                                         <input required type="text" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none" value={login} onChange={e => setLogin(e.target.value)} />
                                     </div>
 
                                     <div>
-                                        <label className="block text-sm font-medium text-gray-700 mb-1">Parol</label>
+                                        <label className="block text-sm font-medium text-gray-700 mb-1">{t(locale, "login.password")}</label>
                                         <input required type="password" className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-indigo-500 outline-none" value={password} onChange={e => setPassword(e.target.value)} />
                                     </div>
 
                                     <div className="pt-4 flex gap-3">
-                                        <button type="button" onClick={() => setStep(1)} className="w-1/3 py-3 rounded-xl font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">Orqaga</button>
+                                        <button type="button" onClick={() => setStep(1)} className="w-1/3 py-3 rounded-xl font-semibold bg-gray-100 text-gray-600 hover:bg-gray-200 transition-colors">{t(locale, "register.back")}</button>
                                         <button disabled={loading} type="submit" className="w-2/3 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 shadow-md hover:shadow-lg disabled:opacity-70 transition-all">
-                                            {loading ? "Kuting..." : "Ro'yxatdan o'tish"}
+                                            {loading ? t(locale, "register.submitting") : t(locale, "register.submit")}
                                         </button>
                                     </div>
                                 </form>

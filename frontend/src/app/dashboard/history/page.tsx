@@ -2,10 +2,15 @@
 
 import { useEffect, useState } from "react";
 import { api } from "@/lib/api";
-import { Download, FileText, Printer, X } from "lucide-react";
+import { FileText, Printer, X } from "lucide-react";
 import { ResultTabs } from "@/components/ResultTabs";
+import { PdfDownloadMenu } from "@/components/PdfDownloadMenu";
 import { motion } from "framer-motion";
+import { useLanguageStore } from "@/store/useLanguageStore";
+import { t } from "@/lib/i18n";
+
 export default function HistoryPage() {
+    const { locale } = useLanguageStore();
     const [history, setHistory] = useState<any[]>([]);
     const [selectedItem, setSelectedItem] = useState<any | null>(null);
     const [loading, setLoading] = useState(true);
@@ -16,34 +21,19 @@ export default function HistoryPage() {
                 const res = await api.get("/history");
                 setHistory(res.data.history);
             } catch (err) {
-                console.error("Xatolik tarixni olishda:", err);
+                console.error("Error fetching history:", err);
             } finally {
                 setLoading(false);
             }
         };
         fetchHistory();
     }, []);
+
     const handlePrint = () => {
         window.print();
     };
 
-    const handleDownload = async () => {
-        if (typeof window !== "undefined") {
-            const html2pdf = (await import("html2pdf.js" as any)).default;
-            const element = document.getElementById("pdf-content");
-            if (element) {
-                const opt = {
-                    margin: 10,
-                    filename: 'oqituvchi-ai.pdf',
-                    image: { type: 'jpeg', quality: 0.98 },
-                    html2canvas: { scale: 2 },
-                    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-                };
-                html2pdf().set(opt).from(element).save();
-            }
-        }
-    };
-    if (loading) return <div className="text-center mt-20 text-gray-500">Tarix yuklanmoqda...</div>;
+    if (loading) return <div className="text-center mt-20 text-gray-500">{t(locale, "history.loadingHistory")}</div>;
 
     return (
         <div className="max-w-6xl mx-auto space-y-8">
@@ -53,32 +43,27 @@ export default function HistoryPage() {
                         <div className="p-6 border-b flex justify-between items-center bg-gray-50">
                             <div>
                                 <h3 className="text-2xl font-bold">{selectedItem.topic}</h3>
-                                <p className="text-sm text-gray-500">{selectedItem.subject} • {selectedItem.class}-sinf</p>
+                                <p className="text-sm text-gray-500">{selectedItem.subject} • {t(locale, "history.classFormat", { n: selectedItem.class })}</p>
                             </div>
                             <div className="flex items-center gap-4">
-                                <button onClick={handleDownload} className="flex gap-2 items-center px-4 py-2 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition">
-                                    <Download size={18} /> PDF yuklash
-                                </button>
+                                <PdfDownloadMenu content={selectedItem.content} topic={selectedItem.topic} />
                                 <button onClick={() => setSelectedItem(null)} className="p-2 hover:bg-gray-200 rounded-full transition">
                                     <X size={24} className="text-gray-500 hover:text-red-500" />
                                 </button>
                             </div>
                         </div>
                         <div className="flex-1 overflow-auto p-8" id="pdf-content">
-                            <ResultTabs result={selectedItem.content} reset={() => setSelectedItem(null)} />
+                            <ResultTabs result={selectedItem.content} reset={() => setSelectedItem(null)} topic={selectedItem.topic} />
                         </div>
                     </div>
                 </div>
             )}
 
             <div className="flex items-center justify-between bg-white/60 backdrop-blur-md p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h2 className="text-3xl font-extrabold text-gray-800">Tarix 📚</h2>
+                <h2 className="text-3xl font-extrabold text-gray-800">{t(locale, "history.title")}</h2>
                 <div className="flex gap-3">
-                    <button onClick={handleDownload} className="flex gap-2 items-center px-4 py-2 bg-indigo-50 text-indigo-700 font-semibold rounded-lg hover:bg-indigo-100 transition whitespace-nowrap">
-                        <Download size={18} /> PDF yuklash
-                    </button>
                     <button onClick={handlePrint} className="flex gap-2 items-center px-4 py-2 bg-purple-50 text-purple-700 font-semibold rounded-lg hover:bg-purple-100 transition">
-                        <Printer size={18} /> Chop etish
+                        <Printer size={18} /> {t(locale, "history.print")}
                     </button>
                 </div>
             </div>
@@ -86,7 +71,7 @@ export default function HistoryPage() {
             {history.length === 0 ? (
                 <div className="bg-white/80 p-10 rounded-3xl text-center shadow border-dashed border-2 border-gray-200">
                     <FileText size={48} className="mx-auto mt-4 text-gray-300 mb-4" />
-                    <p className="text-gray-500">Hozircha hech qanday kontent yaratmadingiz.</p>
+                    <p className="text-gray-500">{t(locale, "history.noContent")}</p>
                 </div>
             ) : (
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -105,7 +90,7 @@ export default function HistoryPage() {
                                 <span className="text-gray-400 text-xs">{new Date(item.createdAt).toLocaleDateString()}</span>
                             </div>
                             <h3 className="font-bold text-xl text-gray-800 mb-1">{item.topic}</h3>
-                            <p className="text-sm text-gray-500 mb-6">{item.class}-sinf • {item.language} tili</p>
+                            <p className="text-sm text-gray-500 mb-6">{t(locale, "history.classFormat", { n: item.class })} • {t(locale, "history.langFormat", { lang: item.language })}</p>
 
                             <div className="flex flex-wrap gap-2">
                                 {Object.keys(item.content).map(k => (
@@ -116,7 +101,7 @@ export default function HistoryPage() {
                             </div>
 
                             <button onClick={() => setSelectedItem(item)} className="mt-6 w-full py-2 bg-gray-50 hover:bg-indigo-50 text-indigo-600 font-semibold rounded-xl border border-gray-100 transition">
-                                Ko'rish
+                                {t(locale, "history.view")}
                             </button>
                         </motion.div>
                     ))}

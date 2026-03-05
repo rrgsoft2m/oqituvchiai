@@ -3,43 +3,50 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Presentation, ClipboardList, MessageCircleQuestion, Gamepad2, Puzzle, Grid } from "lucide-react";
+import { useLanguageStore } from "@/store/useLanguageStore";
+import { t } from "@/lib/i18n";
+import { PdfDownloadMenu } from "@/components/PdfDownloadMenu";
 
-export function ResultTabs({ result, reset }: { result: any, reset: () => void }) {
+export function ResultTabs({ result, reset, topic }: { result: any, reset: () => void, topic?: string }) {
+    const { locale } = useLanguageStore();
     const [activeTab, setActiveTab] = useState("slides");
 
     const TABS = [
-        { id: "slides", label: "Slaydlar", icon: Presentation, color: "text-indigo-500", bg: "bg-indigo-50" },
-        { id: "tests", label: "Testlar", icon: ClipboardList, color: "text-green-500", bg: "bg-green-50" },
-        { id: "qa", label: "S&A", icon: MessageCircleQuestion, color: "text-yellow-500", bg: "bg-yellow-50" },
-        { id: "game", label: "O'yin", icon: Gamepad2, color: "text-purple-500", bg: "bg-purple-50" },
-        { id: "crossword", label: "Krossvord", icon: Grid, color: "text-pink-500", bg: "bg-pink-50" },
-        { id: "logic", label: "Jumboq", icon: Puzzle, color: "text-red-500", bg: "bg-red-50" },
+        { id: "slides", label: t(locale, "results.slides"), icon: Presentation, color: "text-indigo-500", bg: "bg-indigo-50" },
+        { id: "tests", label: t(locale, "results.tests"), icon: ClipboardList, color: "text-green-500", bg: "bg-green-50" },
+        { id: "qa", label: t(locale, "results.qa"), icon: MessageCircleQuestion, color: "text-yellow-500", bg: "bg-yellow-50" },
+        { id: "game", label: t(locale, "results.game"), icon: Gamepad2, color: "text-purple-500", bg: "bg-purple-50" },
+        { id: "crossword", label: t(locale, "results.crossword"), icon: Grid, color: "text-pink-500", bg: "bg-pink-50" },
+        { id: "logic", label: t(locale, "results.puzzle"), icon: Puzzle, color: "text-red-500", bg: "bg-red-50" },
     ];
 
     return (
         <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} className="space-y-6">
 
-            <div className="flex justify-between items-center bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-sm border border-white">
+            <div className="flex flex-wrap justify-between items-center gap-4 bg-white/80 backdrop-blur-md p-6 rounded-2xl shadow-sm border border-white">
                 <div>
-                    <h2 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">Natijalar tayyor! 🚀</h2>
-                    <p className="text-sm text-gray-500 mt-1">Siz tanlagan mavzu bo'yicha barcha modullar shakllantirildi.</p>
+                    <h2 className="text-3xl font-extrabold bg-clip-text text-transparent bg-gradient-to-r from-indigo-600 to-purple-600">{t(locale, "results.ready")}</h2>
+                    <p className="text-sm text-gray-500 mt-1">{t(locale, "results.readyDesc")}</p>
                 </div>
-                <button onClick={reset} className="px-6 py-3 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 font-bold rounded-xl shadow-inner transition transform active:scale-95">
-                    Qayta Yaratish
-                </button>
+                <div className="flex items-center gap-3 flex-wrap">
+                    <PdfDownloadMenu content={result} topic={topic || "content"} />
+                    <button onClick={reset} className="px-6 py-3 bg-gradient-to-r from-gray-100 to-gray-200 hover:from-gray-200 hover:to-gray-300 text-gray-800 font-bold rounded-xl shadow-inner transition transform active:scale-95">
+                        {t(locale, "results.regenerate")}
+                    </button>
+                </div>
             </div>
 
             <div className="flex items-center gap-2 overflow-x-auto pb-4 custom-scrollbar">
-                {TABS.map(t => {
-                    const Icon = t.icon;
+                {TABS.map(tab => {
+                    const Icon = tab.icon;
                     return (
                         <button
-                            key={t.id}
-                            onClick={() => setActiveTab(t.id)}
-                            className={`flex items-center gap-2 px-6 py-4 rounded-2xl font-bold whitespace-nowrap transition-all ${activeTab === t.id ? `${t.bg} shadow-md border border-white` : "bg-white hover:bg-gray-50 text-gray-500 shadow-sm"}`}
+                            key={tab.id}
+                            onClick={() => setActiveTab(tab.id)}
+                            className={`flex items-center gap-2 px-6 py-4 rounded-2xl font-bold whitespace-nowrap transition-all ${activeTab === tab.id ? `${tab.bg} shadow-md border border-white` : "bg-white hover:bg-gray-50 text-gray-500 shadow-sm"}`}
                         >
-                            <Icon size={20} className={activeTab === t.id ? t.color : "text-gray-400"} />
-                            <span className={activeTab === t.id ? t.color : ""}>{t.label}</span>
+                            <Icon size={20} className={activeTab === tab.id ? tab.color : "text-gray-400"} />
+                            <span className={activeTab === tab.id ? tab.color : ""}>{tab.label}</span>
                         </button>
                     )
                 })}
@@ -59,8 +66,9 @@ export function ResultTabs({ result, reset }: { result: any, reset: () => void }
 }
 
 function SlideView({ slides }: { slides: any[] }) {
+    const { locale } = useLanguageStore();
     const [idx, setIdx] = useState(0);
-    if (!slides || !slides.length) return <div className="text-gray-400 text-center mt-20 font-medium">Slayd topilmadi</div>;
+    if (!slides || !slides.length) return <div className="text-gray-400 text-center mt-20 font-medium">{t(locale, "results.noSlides")}</div>;
     const slide = slides[idx];
     return (
         <div className="flex flex-col h-full bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl">
@@ -85,19 +93,20 @@ function SlideView({ slides }: { slides: any[] }) {
                 </ul>
             </div>
             <div className="p-4 bg-white/40 border-t border-white flex justify-between items-center px-10">
-                <button onClick={() => setIdx(Math.max(0, idx - 1))} className="px-5 py-2 hover:bg-white rounded-lg font-bold text-indigo-600 transition shadow-sm border border-transparent hover:border-indigo-100 disabled:opacity-50" disabled={idx === 0}>Avvalgi</button>
+                <button onClick={() => setIdx(Math.max(0, idx - 1))} className="px-5 py-2 hover:bg-white rounded-lg font-bold text-indigo-600 transition shadow-sm border border-transparent hover:border-indigo-100 disabled:opacity-50" disabled={idx === 0}>{t(locale, "results.prev")}</button>
                 <span className="font-bold text-gray-500 bg-white px-4 py-1 rounded-full shadow-inner">{idx + 1} / {slides.length}</span>
-                <button onClick={() => setIdx(Math.min(slides.length - 1, idx + 1))} className="px-5 py-2 hover:bg-white rounded-lg font-bold text-indigo-600 transition shadow-sm border border-transparent hover:border-indigo-100 disabled:opacity-50" disabled={idx === slides.length - 1}>Keyingi</button>
+                <button onClick={() => setIdx(Math.min(slides.length - 1, idx + 1))} className="px-5 py-2 hover:bg-white rounded-lg font-bold text-indigo-600 transition shadow-sm border border-transparent hover:border-indigo-100 disabled:opacity-50" disabled={idx === slides.length - 1}>{t(locale, "results.next")}</button>
             </div>
         </div>
     );
 }
 
 function TestView({ tests }: { tests: any[] }) {
+    const { locale } = useLanguageStore();
     const [userAnswers, setUserAnswers] = useState<Record<number, number>>({});
     const [submitted, setSubmitted] = useState(false);
 
-    if (!tests) return <div>Yo'q</div>;
+    if (!tests) return <div>{t(locale, "results.noData")}</div>;
 
     const handleSelect = (qIdx: number, aIdx: number) => {
         if (!submitted) {
@@ -107,8 +116,8 @@ function TestView({ tests }: { tests: any[] }) {
 
     const calculateScore = () => {
         let correct = 0;
-        tests.forEach((t, i) => {
-            if (userAnswers[i] === t.answerIndex) correct++;
+        tests.forEach((test, i) => {
+            if (userAnswers[i] === test.answerIndex) correct++;
         });
         return { correct, total: tests.length, percent: Math.round((correct / tests.length) * 100) };
     };
@@ -120,8 +129,8 @@ function TestView({ tests }: { tests: any[] }) {
             {submitted && score && (
                 <div className="bg-gradient-to-r from-green-500 to-emerald-600 p-6 rounded-2xl text-white shadow-lg mb-8 flex justify-between items-center">
                     <div>
-                        <h3 className="text-2xl font-bold mb-1">Testingiz natijasi</h3>
-                        <p className="text-green-100">{score.correct} ta to'g'ri, {score.total - score.correct} ta noto'g'ri</p>
+                        <h3 className="text-2xl font-bold mb-1">{t(locale, "results.testResult")}</h3>
+                        <p className="text-green-100">{t(locale, "results.correct", { n: score.correct })}, {t(locale, "results.wrong", { n: score.total - score.correct })}</p>
                     </div>
                     <div className="text-5xl font-black bg-white text-green-600 w-24 h-24 rounded-full flex items-center justify-center shadow-inner">
                         {score.percent}%
@@ -129,14 +138,14 @@ function TestView({ tests }: { tests: any[] }) {
                 </div>
             )}
 
-            {tests.map((t, i) => (
-                <div key={i} className={`bg-green-50/50 p-6 rounded-2xl border ${submitted && userAnswers[i] === t.answerIndex ? 'border-green-400 bg-green-100/50' : submitted && userAnswers[i] !== t.answerIndex ? 'border-red-400 bg-red-50/50' : 'border-green-100'}`}>
-                    <h3 className="font-bold text-xl text-green-900 mb-6 flex gap-3"><span className="bg-green-200 text-green-800 w-8 h-8 flex items-center justify-center rounded-full text-sm shrink-0">{i + 1}</span> {t.question}</h3>
+            {tests.map((test, i) => (
+                <div key={i} className={`bg-green-50/50 p-6 rounded-2xl border ${submitted && userAnswers[i] === test.answerIndex ? 'border-green-400 bg-green-100/50' : submitted && userAnswers[i] !== test.answerIndex ? 'border-red-400 bg-red-50/50' : 'border-green-100'}`}>
+                    <h3 className="font-bold text-xl text-green-900 mb-6 flex gap-3"><span className="bg-green-200 text-green-800 w-8 h-8 flex items-center justify-center rounded-full text-sm shrink-0">{i + 1}</span> {test.question}</h3>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 ml-11">
-                        {t.options.map((opt: string, j: number) => {
+                        {test.options.map((opt: string, j: number) => {
                             const isSelected = userAnswers[i] === j;
-                            const isCorrect = submitted && j === t.answerIndex;
-                            const isWrongSelection = submitted && isSelected && j !== t.answerIndex;
+                            const isCorrect = submitted && j === test.answerIndex;
+                            const isWrongSelection = submitted && isSelected && j !== test.answerIndex;
 
                             return (
                                 <div
@@ -153,8 +162,8 @@ function TestView({ tests }: { tests: any[] }) {
                             );
                         })}
                     </div>
-                    {submitted && userAnswers[i] !== t.answerIndex && (
-                        <div className="mt-4 ml-11 pt-4 border-t border-red-200 text-red-600 font-medium">To'g'ri javob: <span className="font-bold">{['A', 'B', 'C', 'D'][t.answerIndex]}) {t.options[t.answerIndex]}</span></div>
+                    {submitted && userAnswers[i] !== test.answerIndex && (
+                        <div className="mt-4 ml-11 pt-4 border-t border-red-200 text-red-600 font-medium">{t(locale, "results.correctAnswer")} <span className="font-bold">{['A', 'B', 'C', 'D'][test.answerIndex]}) {test.options[test.answerIndex]}</span></div>
                     )}
                 </div>
             ))}
@@ -165,7 +174,7 @@ function TestView({ tests }: { tests: any[] }) {
                     disabled={Object.keys(userAnswers).length !== tests.length}
                     className="w-full py-4 text-xl font-bold text-white bg-green-500 hover:bg-green-600 rounded-xl shadow-lg transition-colors disabled:bg-gray-300 disabled:cursor-not-allowed"
                 >
-                    Natijani Ko'rish
+                    {t(locale, "results.showResult")}
                 </button>
             )}
         </div>
@@ -173,7 +182,8 @@ function TestView({ tests }: { tests: any[] }) {
 }
 
 function QaView({ qa }: { qa: any[] }) {
-    if (!qa) return <div>Yo'q</div>;
+    const { locale } = useLanguageStore();
+    if (!qa) return <div>{t(locale, "results.noData")}</div>;
     return (
         <div className="space-y-4 max-h-[600px] overflow-auto pr-4 custom-scrollbar">
             {qa.map((q, i) => (
@@ -192,26 +202,27 @@ function QaView({ qa }: { qa: any[] }) {
 }
 
 function GameView({ game }: { game: any }) {
-    if (!game) return <div>Yo'q</div>;
+    const { locale } = useLanguageStore();
+    if (!game) return <div>{t(locale, "results.noData")}</div>;
     return (
         <div className="bg-gradient-to-br from-purple-50 to-fuchsia-50 p-8 rounded-3xl border border-purple-100 h-full max-h-[600px] overflow-auto">
-            <h2 className="text-3xl font-black text-purple-900 mb-6 flex items-center gap-3"><Gamepad2 className="text-purple-500 w-10 h-10" /> Interaktiv O'yin</h2>
+            <h2 className="text-3xl font-black text-purple-900 mb-6 flex items-center gap-3"><Gamepad2 className="text-purple-500 w-10 h-10" /> {t(locale, "results.interactiveGame")}</h2>
             <div className="grid md:grid-cols-2 gap-8 mb-8">
                 <div className="bg-white/80 p-6 rounded-2xl shadow-sm">
-                    <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-2">Ssenariy</h4>
+                    <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-2">{t(locale, "results.scenario")}</h4>
                     <p className="font-medium text-gray-800 text-lg">{game.scenario}</p>
                 </div>
                 <div className="bg-white/80 p-6 rounded-2xl shadow-sm">
-                    <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-2">Qoidalar</h4>
+                    <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-2">{t(locale, "results.rules")}</h4>
                     <p className="font-medium text-gray-800">{game.rules}</p>
                 </div>
             </div>
             <div className="bg-white/80 p-6 rounded-2xl shadow-sm mb-6">
-                <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-2">Kerakli Jihozlar</h4>
+                <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-2">{t(locale, "results.equipment")}</h4>
                 <p className="font-medium text-gray-800">{game.equipment}</p>
             </div>
             <div className="bg-white/80 p-6 rounded-2xl shadow-sm">
-                <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-4">Qadamlar</h4>
+                <h4 className="font-bold text-purple-600 uppercase text-sm tracking-wider mb-4">{t(locale, "results.steps")}</h4>
                 <ul className="space-y-4">
                     {game.steps?.map((s: string, i: number) => (
                         <li key={i} className="flex gap-4 items-center bg-purple-50 p-4 rounded-xl border border-purple-100">
@@ -226,10 +237,11 @@ function GameView({ game }: { game: any }) {
 }
 
 function CrosswordView({ crosswords }: { crosswords: any[] }) {
-    if (!crosswords) return <div>Yo'q</div>;
+    const { locale } = useLanguageStore();
+    if (!crosswords) return <div>{t(locale, "results.noData")}</div>;
     return (
         <div className="bg-pink-50 p-8 rounded-3xl border border-pink-100 h-full min-h-[400px]">
-            <h2 className="text-3xl font-black text-pink-900 mb-8 flex items-center gap-3"><Grid className="text-pink-500 w-10 h-10" /> Krossvord</h2>
+            <h2 className="text-3xl font-black text-pink-900 mb-8 flex items-center gap-3"><Grid className="text-pink-500 w-10 h-10" /> {t(locale, "results.crossword")}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {crosswords.map((c, i) => (
                     <div key={i} className="bg-white p-6 rounded-2xl shadow-sm border border-pink-100 flex flex-col justify-between">
@@ -249,19 +261,20 @@ function CrosswordView({ crosswords }: { crosswords: any[] }) {
 }
 
 function LogicView({ logic }: { logic: any }) {
+    const { locale } = useLanguageStore();
     const [show, setShow] = useState(false);
-    if (!logic) return <div>Yo'q</div>;
+    if (!logic) return <div>{t(locale, "results.noData")}</div>;
     return (
         <div className="bg-gradient-to-br from-red-50 to-orange-50 p-10 rounded-3xl border border-red-100 min-h-[400px] flex flex-col items-center justify-center text-center">
             <Puzzle className="w-16 h-16 text-red-500 mb-6 drop-shadow-md" />
             <h3 className="text-3xl md:text-4xl font-black text-red-900 mb-8 max-w-2xl leading-relaxed">
-                "{logic.puzzle}"
+                &quot;{logic.puzzle}&quot;
             </h3>
             <button
                 onClick={() => setShow(!show)}
                 className="px-8 py-4 bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white font-bold rounded-2xl shadow-lg hover:shadow-xl transition transform hover:-translate-y-1 text-lg mb-8"
             >
-                {show ? "Javobni yashirish" : "Javobni ko'rish"}
+                {show ? t(locale, "results.hideAnswer") : t(locale, "results.showAnswer")}
             </button>
             {show && (
                 <motion.div initial={{ opacity: 0, y: 10, scale: 0.9 }} animate={{ opacity: 1, y: 0, scale: 1 }} className="bg-white px-8 py-6 rounded-2xl shadow-xl border-t-4 border-red-500">

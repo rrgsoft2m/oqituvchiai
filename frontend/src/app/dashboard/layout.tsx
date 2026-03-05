@@ -3,21 +3,25 @@
 import { useEffect, useState } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { useAuthStore } from "@/store/useAuthStore";
+import { useLanguageStore } from "@/store/useLanguageStore";
+import { t } from "@/lib/i18n";
 import Link from "next/link";
 import { Home, History, LogOut, Menu, UserCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
     const router = useRouter();
     const pathname = usePathname();
     const { user, hydrate, logout } = useAuthStore();
+    const { locale, hydrate: hydrateLocale } = useLanguageStore();
     const [mounted, setMounted] = useState(false);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         hydrate();
+        hydrateLocale();
         setMounted(true);
-    }, [hydrate]);
+    }, [hydrate, hydrateLocale]);
 
     useEffect(() => {
         if (mounted && !user) {
@@ -25,7 +29,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
         }
     }, [mounted, user, router]);
 
-    if (!mounted || !user) return <div className="h-screen w-full bg-slate-50 flex items-center justify-center">Yuklanmoqda...</div>;
+    if (!mounted || !user) return <div className="h-screen w-full bg-slate-50 flex items-center justify-center">{t(locale, "app.loading")}</div>;
 
     return (
         <div className="flex h-screen bg-slate-100 font-sans">
@@ -43,25 +47,30 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
             >
                 <div className="p-6 flex items-center gap-3 border-b border-gray-100">
                     <img src="https://buxedu.uz/static/images/logo.png" className="w-10" />
-                    <h1 className="font-bold text-xl text-indigo-900">O'qituvchi AI</h1>
+                    <h1 className="font-bold text-xl text-indigo-900">{t(locale, "app.name")}</h1>
                 </div>
 
                 <div className="flex-1 p-4 space-y-2 mt-4">
                     <Link onClick={() => setIsMobileMenuOpen(false)} href="/dashboard" className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${pathname === "/dashboard" ? "bg-indigo-600 text-white shadow-md" : "text-gray-600 hover:bg-indigo-50"}`}>
-                        <Home size={20} /> <span className="font-medium">Generator</span>
+                        <Home size={20} /> <span className="font-medium">{t(locale, "dashboard.generator")}</span>
                     </Link>
                     <Link onClick={() => setIsMobileMenuOpen(false)} href="/dashboard/history" className={`flex items-center gap-3 px-4 py-3 rounded-xl transition ${pathname === "/dashboard/history" ? "bg-indigo-600 text-white shadow-md" : "text-gray-600 hover:bg-indigo-50"}`}>
-                        <History size={20} /> <span className="font-medium">Tarix</span>
+                        <History size={20} /> <span className="font-medium">{t(locale, "dashboard.history")}</span>
                     </Link>
+                </div>
+
+                {/* Language switcher in sidebar */}
+                <div className="px-4 pb-4">
+                    <LanguageSwitcher variant="full" />
                 </div>
 
                 <div className="p-6 border-t border-gray-100 bg-gradient-to-t from-gray-50 flex flex-col items-center">
                     <UserCircle size={40} className="text-gray-400 mb-2" />
                     <p className="font-bold text-gray-800">{user.firstName} {user.lastName}</p>
-                    <p className="text-xs text-indigo-600 font-semibold mb-4 bg-indigo-100 px-3 py-1 rounded-full">{user.role} TARIF</p>
+                    <p className="text-xs text-indigo-600 font-semibold mb-4 bg-indigo-100 px-3 py-1 rounded-full">{user.role} {t(locale, "dashboard.tariff")}</p>
 
                     <button onClick={() => { logout(); router.push("/login"); }} className="flex items-center gap-2 text-red-500 hover:text-red-700 font-medium transition text-sm">
-                        <LogOut size={16} /> Chiqish
+                        <LogOut size={16} /> {t(locale, "dashboard.logout")}
                     </button>
                 </div>
             </aside>
@@ -71,9 +80,12 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <header className="md:hidden flex items-center justify-between p-4 bg-white shadow-sm border-b">
                     <div className="flex items-center gap-2">
                         <img src="https://buxedu.uz/static/images/logo.png" className="w-8" />
-                        <h1 className="font-bold text-lg text-indigo-900">O'qituvchi AI</h1>
+                        <h1 className="font-bold text-lg text-indigo-900">{t(locale, "app.name")}</h1>
                     </div>
-                    <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-600"><Menu size={24} /></button>
+                    <div className="flex items-center gap-2">
+                        <LanguageSwitcher variant="compact" />
+                        <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="text-gray-600"><Menu size={24} /></button>
+                    </div>
                 </header>
 
                 <div className="flex-1 overflow-auto p-4 md:p-8">
